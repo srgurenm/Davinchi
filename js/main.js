@@ -30,19 +30,6 @@ const CONFIG = {
 };
 
 /* ─────────────────────────────────────────────
-   1. UPDATE WHATSAPP LINKS
-   Replaces placeholder number with real one from CONFIG
-────────────────────────────────────────────── */
-function updateWhatsAppLinks() {
-  const url = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${CONFIG.WHATSAPP_MESSAGE}`;
-  const waLinks = document.querySelectorAll('a[href*="wa.me"]');
-
-  waLinks.forEach((link) => {
-    link.href = url;
-  });
-}
-
-/* ─────────────────────────────────────────────
    2. FOOTER YEAR
 ────────────────────────────────────────────── */
 function setFooterYear() {
@@ -181,27 +168,10 @@ function initGalleryLightbox() {
 }
 
 /* ─────────────────────────────────────────────
-   5. PHONE NUMBER DISPLAY
-   Updates visible phone text with real number
-────────────────────────────────────────────── */
-function updatePhoneNumbers() {
-  const DISPLAY_NUMBER = '+57 302 290 3588'; // Update with real number
-  const phoneEls = document.querySelectorAll('#cta-phone-link, #footer-phone');
-
-  phoneEls.forEach((el) => {
-    if (el.textContent.includes('3XX')) {
-      el.textContent = `📱 ${DISPLAY_NUMBER}`;
-    }
-  });
-}
-
-/* ─────────────────────────────────────────────
    INIT — DOMContentLoaded
 ────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   setFooterYear();
-  updateWhatsAppLinks();
-  updatePhoneNumbers();
   initSmoothScroll();
   initGalleryLightbox();
 
@@ -210,9 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
     '%c💈 Davinchi BarberShop %c— Website loaded',
     'color: #c49b3a; font-size: 14px; font-weight: bold;',
     'color: #9e9589; font-size: 12px;'
-  );
-  console.log(
-    '%cPara actualizar el número de WhatsApp, edita CONFIG.WHATSAPP_NUMBER en js/main.js',
-    'color: #6b6560; font-size: 11px;'
   );
 });
