@@ -148,44 +148,113 @@
 }
 
 /* ─────────────────────────────────────────────
-   WHATSAPP BUTTON (navbar variant)
+   BOOK NOW BUTTON (NEW STYLE)
+   From Uiverse.io by vinodjangid07
 ────────────────────────────────────────────── */
-.btn--whatsapp {
-  padding: 0.65em 1.4em;
-  background: #25D366;
-  color: #fff;
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  transition: background var(--transition-std), box-shadow var(--transition-std);
+.btn--book-now {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  text-decoration: none; /* Added for <a> tag */
+  font-weight: 600; /* Added for better text appearance */
+  font-family: var(--font-sans); /* Ensure consistency */
 }
 
-.btn--whatsapp:hover {
-  background: #20BA5A;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+.btn--book-now::before {
+  position: absolute;
+  content: "BOOK NOW"; /* Adapted from SUBSCRIBE */
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.btn--book-now:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.btn--book-now:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.btn--book-now:active {
+  transform: scale(0.95);
 }
 
 /* ─────────────────────────────────────────────
-   INSTAGRAM BUTTON
+   INSTAGRAM BUTTON (NEW STYLE)
 ────────────────────────────────────────────── */
-.btn--instagram {
-  padding: 0.9em 2.2em;
-  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  transition: opacity var(--transition-std), transform var(--transition-fast),
-              box-shadow var(--transition-std);
+.Btn {
+  width: 160px; /* Adjusted to fit the text 'Ver más en Instagram' */
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+  text-decoration: none; /* In case of <a> tag */
 }
 
-.btn--instagram:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(131, 58, 180, 0.4);
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  color: white; /* Ensure text/icon is visible */
 }
 
-.btn--instagram:active {
-  transform: translateY(0);
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
 }
