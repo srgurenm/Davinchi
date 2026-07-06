@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Davinchi BarberShop — Cortes de élite, estilo clásico con toque contemporáneo en Medellín. Reserva tu cita por WhatsApp." />
-  <meta name="keywords" content="barbería Medellín, cortes de cabello, Davinchi BarberShop, barber, fade, navaja" />
+  <meta name="description" content="Davinchi BarberShop — Elite haircuts, classic style with a contemporary touch in Medellín. Book your appointment via WhatsApp." />
+  <meta name="keywords" content="Medellin barbershop, haircuts, Davinchi BarberShop, barber, fade, razor" />
   <meta property="og:title" content="Davinchi BarberShop" />
-  <meta property="og:description" content="Donde el oficio se convierte en arte. Reserva tu cita hoy." />
+  <meta property="og:description" content="Where the craft becomes art. Book your appointment today." />
   <meta property="og:type" content="website" />
-  <title>Davinchi BarberShop — El Arte del Corte</title>
+  <title>Davinchi BarberShop — The Art of the Cut</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/main.css" />
@@ -27,8 +23,10 @@
   <link rel="stylesheet" href="css/components/gallery.css" />
   <link rel="stylesheet" href="css/components/buttons.css" />
   <link rel="stylesheet" href="css/components/footer.css" />
-</head>
 
+  <!-- i18n Engine (Loaded early to prevent layout shift during lang switch) -->
+  <script src="js/i18n.js"></script>
+</head>
 <body>
 
   <!-- ========================
@@ -41,23 +39,31 @@
         <span class="navbar__logo-sub">BARBER SHOP</span>
       </a>
 
-      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <button class="navbar__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span class="navbar__toggle-bar"></span>
         <span class="navbar__toggle-bar"></span>
         <span class="navbar__toggle-bar"></span>
       </button>
 
-      <nav class="navbar__nav" id="navMenu" role="navigation" aria-label="Navegación principal">
+      <nav class="navbar__nav" id="navMenu" role="navigation" aria-label="Main navigation">
         <ul class="navbar__list">
-          <li><a href="#hero" class="navbar__link" id="nav-link-home">Inicio</a></li>
-          <li><a href="#services" class="navbar__link" id="nav-link-services">Servicios</a></li>
-          <li><a href="#gallery" class="navbar__link" id="nav-link-gallery">Galería</a></li>
-          <li><a href="#about" class="navbar__link" id="nav-link-about">Nosotros</a></li>
-          <li><a href="#contact" class="navbar__link" id="nav-link-contact">Contacto</a></li>
+          <li><a href="#hero" class="navbar__link" id="nav-link-home" data-i18n="nav-home">Home</a></li>
+          <li><a href="#services" class="navbar__link" id="nav-link-services" data-i18n="nav-services">Services</a></li>
+          <li><a href="#gallery" class="navbar__link" id="nav-link-gallery" data-i18n="nav-gallery">Gallery</a></li>
+          <li><a href="#about" class="navbar__link" id="nav-link-about" data-i18n="nav-about">About Us</a></li>
+          <li><a href="#contact" class="navbar__link" id="nav-link-contact" data-i18n="nav-contact">Contact</a></li>
         </ul>
-        <a href="https://wa.me/573XXXXXXXXX?text=Hola%20Davinchi%20BarberShop%2C%20quiero%20reservar%20una%20cita"
-          class="btn btn--whatsapp navbar__cta" id="nav-whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          Reservar
+        
+        <!-- Always Visible Language Toggle -->
+        <div class="lang-selector">
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="Switch to English">EN</button>
+          <span class="lang-separator">|</span>
+          <button class="lang-btn" data-lang="es" aria-label="Cambiar a Español">ES</button>
+        </div>
+
+        <a href="https://wa.me/573XXXXXXXXX?text=Hello%20Davinchi%20BarberShop%2C%20I%20want%20to%20book%20an%20appointment"
+          class="btn btn--whatsapp navbar__cta" id="nav-whatsapp-btn" target="_blank" rel="noopener noreferrer" data-i18n="nav-book">
+          Book Now
         </a>
       </nav>
     </div>
@@ -73,39 +79,37 @@
       <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
 
       <div class="hero__content">
-        <p class="hero__tagline" id="hero-tagline">— Medellín, Colombia</p>
-        <h1 class="hero__title" id="hero-title">
-          Donde el oficio<br />
-          <em>se convierte</em><br />
-          en arte.
+        <p class="hero__tagline" id="hero-tagline" data-i18n="hero-tagline">— Medellín, Colombia</p>
+        <h1 class="hero__title" id="hero-title" data-i18n="hero-title">
+          Where the craft<br />
+          <em>becomes</em><br />
+          art.
         </h1>
-        <p class="hero__subtitle" id="hero-subtitle">
-          Cortes de precisión. Tradición con estilo.<br />
-          Cada silla, una experiencia única.
+        <p class="hero__subtitle" id="hero-subtitle" data-i18n="hero-subtitle">
+          Precision cuts. Tradition with style.<br />
+          Every chair, a unique experience.
         </p>
 
-        <!-- ★ ANIMATED GLOW BUTTON — easy to replace, see css/components/buttons.css -->
+        <!-- ★ ANIMATED GLOW BUTTON — Book Appointment -->
         <div class="hero__cta-group">
-          <a href="https://wa.me/573XXXXXXXXX?text=Hola%20Davinchi%20BarberShop%2C%20quiero%20reservar%20una%20cita"
-            class="btn btn--glow" id="hero-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/573XXXXXXXXX?text=Hello%20Davinchi%20BarberShop%2C%20I%20want%20to%20book%20an%20appointment"
+            class="btn btn--glow" id="hero-whatsapp-btn" target="_blank" rel="noopener noreferrer" data-i18n="hero-book-btn">
             <span class="btn__icon" aria-hidden="true">
-              <!-- WhatsApp icon inline SVG -->
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
               </svg>
             </span>
-            Reservar mi cita
+            Book my appointment
           </a>
 
-          <a href="#services" class="btn btn--outline" id="hero-services-btn">
-            Ver servicios
+          <a href="#services" class="btn btn--outline" id="hero-services-btn" data-i18n="hero-services-btn">
+            View services
           </a>
         </div>
 
         <div class="hero__scroll-indicator" aria-hidden="true">
           <span class="hero__scroll-line"></span>
-          <span class="hero__scroll-text">Scroll</span>
+          <span class="hero__scroll-text" data-i18n="scroll-text">Scroll</span>
         </div>
       </div>
 
@@ -116,30 +120,30 @@
     <!-- ========================
          STATS / TRUST BAR
     ========================= -->
-    <section class="stats" id="stats" aria-label="Estadísticas de la barbería">
+    <section class="stats" id="stats" aria-label="Barbershop statistics">
       <div class="stats__container">
         <div class="stats__item" id="stat-years">
           <span class="stats__number" data-target="10">0</span>
           <span class="stats__plus">+</span>
-          <p class="stats__label">Años de experiencia</p>
+          <p class="stats__label" data-i18n="stat-years-label">Years of experience</p>
         </div>
         <div class="stats__divider" aria-hidden="true"></div>
         <div class="stats__item" id="stat-clients">
           <span class="stats__number" data-target="5000">0</span>
           <span class="stats__plus">+</span>
-          <p class="stats__label">Clientes satisfechos</p>
+          <p class="stats__label" data-i18n="stat-clients-label">Satisfied clients</p>
         </div>
         <div class="stats__divider" aria-hidden="true"></div>
         <div class="stats__item" id="stat-services">
           <span class="stats__number" data-target="8">0</span>
           <span class="stats__plus"></span>
-          <p class="stats__label">Servicios premium</p>
+          <p class="stats__label" data-i18n="stat-services-label">Premium services</p>
         </div>
         <div class="stats__divider" aria-hidden="true"></div>
         <div class="stats__item" id="stat-rating">
           <span class="stats__number" data-target="5">0</span>
           <span class="stats__plus">★</span>
-          <p class="stats__label">Calificación Google</p>
+          <p class="stats__label" data-i18n="stat-rating-label">Google Rating</p>
         </div>
       </div>
     </section>
@@ -150,58 +154,56 @@
     <section class="services" id="services">
       <div class="services__container">
         <div class="services__header">
-          <span class="section-label">Nuestros Servicios</span>
-          <h2 class="section-title">El arte del <em>estilo</em></h2>
-          <p class="section-subtitle">Cada servicio es ejecutado con precisión, usando los mejores productos y técnicas.
-          </p>
+          <span class="section-label" data-i18n="services-label">Our Services</span>
+          <h2 class="section-title" data-i18n="services-title">The Art of <em>Style</em></h2>
+          <p class="section-subtitle" data-i18n="services-subtitle">Each service is executed with precision, using the best products and techniques.</p>
         </div>
 
         <div class="services__grid" id="services-grid">
 
           <article class="service-card" id="service-fade">
-            <h3 class="service-card__title">Corte Fade</h3>
-            <p class="service-card__desc">Degradados precisos de alta a baja, con acabado limpio y profesional.</p>
-            <span class="service-card__price">Desde $25.000</span>
+            <h3 class="service-card__title" data-i18n="service-fade-title">Fade Cut</h3>
+            <p class="service-card__desc" data-i18n="service-fade-desc">Precise gradients from high to low, with a clean and professional finish.</p>
+            <span class="service-card__price" data-i18n="service-fade-price">From $25.000</span>
           </article>
 
           <article class="service-card service-card--featured" id="service-classic">
-            <div class="service-card__badge">Popular</div>
-            <h3 class="service-card__title">Corte Clásico</h3>
-            <p class="service-card__desc">Tijera y máquina en perfecta armonía. El clásico reinventado para el hombre
-              moderno.</p>
-            <span class="service-card__price">Desde $30.000</span>
+            <div class="service-card__badge" data-i18n="service-classic-badge">Popular</div>
+            <h3 class="service-card__title" data-i18n="service-classic-title">Classic Cut</h3>
+            <p class="service-card__desc" data-i18n="service-classic-desc">Scissors and machine in perfect harmony. The classic reinvented for the modern man.</p>
+            <span class="service-card__price" data-i18n="service-classic-price">From $30.000</span>
           </article>
 
           <article class="service-card" id="service-beard">
-            <h3 class="service-card__title">Arreglo de Barba</h3>
-            <p class="service-card__desc">Perfilado y definición de barba con navaja caliente y productos premium.</p>
-            <span class="service-card__price">Desde $20.000</span>
+            <h3 class="service-card__title" data-i18n="service-beard-title">Beard Grooming</h3>
+            <p class="service-card__desc" data-i18n="service-beard-desc">Beard shaping and definition with hot razor and premium products.</p>
+            <span class="service-card__price" data-i18n="service-beard-price">From $20.000</span>
           </article>
 
           <article class="service-card" id="service-shave">
-            <h3 class="service-card__title">Afeitado con Navaja</h3>
-            <p class="service-card__desc">Experiencia completa con toalla caliente, crema artesanal y navaja recta.</p>
-            <span class="service-card__price">Desde $35.000</span>
+            <h3 class="service-card__title" data-i18n="service-shave-title">Straight Razor Shave</h3>
+            <p class="service-card__desc" data-i18n="service-shave-desc">Complete experience with hot towel, artisanal cream, and straight razor.</p>
+            <span class="service-card__price" data-i18n="service-shave-price">From $35.000</span>
           </article>
 
           <article class="service-card" id="service-combo">
-            <h3 class="service-card__title">Combo Completo</h3>
-            <p class="service-card__desc">Corte + barba + lavado + tratamiento. La experiencia Davinchi al máximo.</p>
-            <span class="service-card__price">Desde $55.000</span>
+            <h3 class="service-card__title" data-i18n="service-combo-title">Full Combo</h3>
+            <p class="service-card__desc" data-i18n="service-combo-desc">Cut + beard + wash + treatment. The ultimate Davinchi experience.</p>
+            <span class="service-card__price" data-i18n="service-combo-price">From $55.000</span>
           </article>
 
           <article class="service-card" id="service-kids">
-            <h3 class="service-card__title">Corte Infantil</h3>
-            <p class="service-card__desc">Paciencia y técnica para los futuros caballeros. Ambiente amigable.</p>
-            <span class="service-card__price">Desde $20.000</span>
+            <h3 class="service-card__title" data-i18n="service-kids-title">Kids Cut</h3>
+            <p class="service-card__desc" data-i18n="service-kids-desc">Patience and technique for future gentlemen. Friendly atmosphere.</p>
+            <span class="service-card__price" data-i18n="service-kids-price">From $20.000</span>
           </article>
 
         </div>
 
         <div class="services__cta">
-          <a href="https://wa.me/573XXXXXXXXX?text=Hola%20Davinchi%20BarberShop%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
-            class="btn btn--gold" id="services-whatsapp-btn" target="_blank" rel="noopener noreferrer">
-            Consultar precios por WhatsApp
+          <a href="https://wa.me/573XXXXXXXXX?text=Hello%20Davinchi%20BarberShop%2C%20I%20want%20to%20know%20more%20about%20your%20services"
+            class="btn btn--gold" id="services-whatsapp-btn" target="_blank" rel="noopener noreferrer" data-i18n="services-whatsapp-btn">
+            Inquire prices on WhatsApp
           </a>
         </div>
       </div>
@@ -213,61 +215,49 @@
     <section class="gallery" id="gallery">
       <div class="gallery__container">
         <div class="gallery__header">
-          <span class="section-label">Galería</span>
-          <h2 class="section-title">Nuestro <em>trabajo</em></h2>
-          <p class="section-subtitle">Cada corte cuenta una historia. Estas son las nuestras.</p>
+          <span class="section-label" data-i18n="gallery-label">Gallery</span>
+          <h2 class="section-title" data-i18n="gallery-title">Our <em>Work</em></h2>
+          <p class="section-subtitle" data-i18n="gallery-subtitle">Each cut tells a story. These are ours.</p>
         </div>
 
         <div class="gallery__grid" id="gallery-grid">
           <!-- PLACEHOLDER IMAGES — Replace src with real photos -->
           <figure class="gallery__item gallery__item--large" id="gallery-item-1">
             <img src="assets/images/interior.png"
-              alt="Interior de Davinchi BarberShop — placeholder, reemplazar con foto real" class="gallery__img"
+              alt="Interior of Davinchi BarberShop — placeholder, replace with real photo" class="gallery__img"
               loading="lazy" />
-            <figcaption class="gallery__caption">Nuestro espacio</figcaption>
+            <figcaption class="gallery__caption" data-i18n="gallery-caption-1">Our Space</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-2">
-            <img src="assets/images/fade-cut.png" alt="Corte fade profesional — placeholder, reemplazar con foto real"
+            <img src="assets/images/fade-cut.png" alt="Professional fade cut — placeholder, replace with real photo"
               class="gallery__img" loading="lazy" />
-            <figcaption class="gallery__caption">Fade perfecto</figcaption>
+            <figcaption class="gallery__caption" data-i18n="gallery-caption-2">Perfect Fade</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-3">
             <img src="assets/images/beard-shave.png"
-              alt="Afeitado con navaja recta — placeholder, reemplazar con foto real" class="gallery__img"
+              alt="Straight razor shave — placeholder, replace with real photo" class="gallery__img"
               loading="lazy" />
-            <figcaption class="gallery__caption">Afeitado clásico</figcaption>
+            <figcaption class="gallery__caption" data-i18n="gallery-caption-3">Classic Shave</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-4">
             <img src="assets/images/tools.png"
-              alt="Herramientas premium de barbería — placeholder, reemplazar con foto real" class="gallery__img"
+              alt="Premium barber tools — placeholder, replace with real photo" class="gallery__img"
               loading="lazy" />
-            <figcaption class="gallery__caption">Herramientas de élite</figcaption>
+            <figcaption class="gallery__caption" data-i18n="gallery-caption-4">Elite Tools</figcaption>
           </figure>
-
-          <!-- SLOTS ADICIONALES para fotos reales — descomentar y añadir src -->
-          <!--
-          <figure class="gallery__item" id="gallery-item-5">
-            <img src="assets/images/TU_FOTO_AQUI.jpg" alt="Descripción de la foto" class="gallery__img" loading="lazy" />
-            <figcaption class="gallery__caption">Texto opcional</figcaption>
-          </figure>
-          <figure class="gallery__item gallery__item--wide" id="gallery-item-6">
-            <img src="assets/images/TU_FOTO_AQUI.jpg" alt="Descripción de la foto" class="gallery__img" loading="lazy" />
-            <figcaption class="gallery__caption">Texto opcional</figcaption>
-          </figure>
-          -->
         </div>
 
         <div class="gallery__instagram-cta">
           <a href="https://www.instagram.com/davinchi_barber_shop" class="btn btn--instagram" id="instagram-btn"
-            target="_blank" rel="noopener noreferrer">
+            target="_blank" rel="noopener noreferrer" data-i18n="gallery-instagram-btn">
             <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
             </svg>
-            Ver más en Instagram
+            View more on Instagram
           </a>
         </div>
       </div>
@@ -280,7 +270,7 @@
       <div class="about__container">
         <div class="about__image-col">
           <div class="about__image-frame" id="about-image-frame">
-            <img src="assets/images/interior.png" alt="Interior de Davinchi BarberShop" class="about__img"
+            <img src="assets/images/interior.png" alt="Interior of Davinchi BarberShop" class="about__img"
               loading="lazy" />
             <div class="about__image-accent" aria-hidden="true"></div>
           </div>
@@ -291,40 +281,40 @@
         </div>
 
         <div class="about__content-col">
-          <span class="section-label">Nuestra Historia</span>
-          <h2 class="section-title">Más que una <em>barbería</em></h2>
-          <p class="about__text">
-            Davinchi BarberShop nació de la pasión por el arte del corte y la tradición barbera.
-            Ubicados en el corazón de Medellín, combinamos técnicas clásicas con las últimas tendencias
-            para ofrecerte una experiencia de grooming sin igual.
+          <span class="section-label" data-i18n="about-label">Our Story</span>
+          <h2 class="section-title" data-i18n="about-title">More than a <em>barbershop</em></h2>
+          <p class="about__text" data-i18n="about-desc-1">
+            Davinchi BarberShop was born from the passion for the art of haircutting and barbering tradition.
+            Located in the heart of Medellín, we combine classic techniques with the latest trends
+            to offer you an unparalleled grooming experience.
           </p>
-          <p class="about__text">
-            Cada detalle de nuestro espacio ha sido pensado para hacerte sentir como lo que eres:
-            un caballero que merece lo mejor. Hablamos inglés, y atendemos a todos con el mismo nivel de excelencia.
+          <p class="about__text" data-i18n="about-desc-2">
+            Every detail of our space has been designed to make you feel like who you are:
+            a gentleman who deserves the best. We speak English, and we serve everyone with the same level of excellence.
           </p>
 
           <ul class="about__values" id="about-values">
             <li class="about__value-item">
               <span class="about__value-icon" aria-hidden="true">✦</span>
-              Precisión artesanal en cada corte
+              <span data-i18n="about-value-1">Craft precision in every cut</span>
             </li>
             <li class="about__value-item">
               <span class="about__value-icon" aria-hidden="true">✦</span>
-              Productos premium internacionales
+              <span data-i18n="about-value-2">Premium international products</span>
             </li>
             <li class="about__value-item">
               <span class="about__value-icon" aria-hidden="true">✦</span>
-              Ambiente exclusivo y relajante
+              <span data-i18n="about-value-3">Exclusive and relaxing environment</span>
             </li>
             <li class="about__value-item">
               <span class="about__value-icon" aria-hidden="true">✦</span>
-              Atención bilingüe (Español &amp; English)
+              <span data-i18n="about-value-4">Bilingual attention (Spanish &amp; English)</span>
             </li>
           </ul>
 
           <a href="https://www.google.com/maps/place/Davinchi+Barber+Shop+(We+speak+english)/@6.2107888,-75.5729951,17z"
-            class="btn btn--outline" id="maps-btn" target="_blank" rel="noopener noreferrer">
-            Ver en Google Maps
+            class="btn btn--outline" id="maps-btn" target="_blank" rel="noopener noreferrer" data-i18n="about-maps-btn">
+            View on Google Maps
           </a>
         </div>
       </div>
@@ -336,24 +326,24 @@
     <section class="cta-section" id="contact">
       <div class="cta-section__overlay" aria-hidden="true"></div>
       <div class="cta-section__content">
-        <span class="section-label section-label--light">¿Listo?</span>
-        <h2 class="cta-section__title">Tu próximo nivel<br />empieza <em>aquí</em></h2>
-        <p class="cta-section__subtitle">Reserva ahora por WhatsApp y asegura tu silla.</p>
+        <span class="section-label section-label--light" data-i18n="cta-label">Ready?</span>
+        <h2 class="cta-section__title" data-i18n="cta-title">Your next level<br />starts <em>here</em></h2>
+        <p class="cta-section__subtitle" data-i18n="cta-subtitle">Book now via WhatsApp and secure your chair.</p>
 
         <!-- ★ ANIMATED GLOW BUTTON — main CTA -->
-        <a href="https://wa.me/573XXXXXXXXX?text=Hola%20Davinchi%20BarberShop%2C%20quiero%20reservar%20una%20cita"
-          class="btn btn--glow btn--glow-large" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/573XXXXXXXXX?text=Hello%20Davinchi%20BarberShop%2C%20I%20want%20to%20book%20an%20appointment"
+          class="btn btn--glow btn--glow-large" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer" data-i18n="cta-whatsapp-btn">
           <span class="btn__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
           </span>
-          Reservar mi cita ahora
+          Book my appointment now
         </a>
 
-        <p class="cta-section__hours">
-          Lun – Sáb &nbsp;|&nbsp; 9:00 AM – 7:00 PM &nbsp;|&nbsp;
+        <p class="cta-section__hours" id="cta-hours-p">
+          <span data-i18n="cta-hours">Mon – Sat &nbsp;|&nbsp; 9:00 AM – 7:00 PM</span> &nbsp;|&nbsp;
           <a href="https://wa.me/573XXXXXXXXX" class="cta-section__phone" id="cta-phone-link">+57 3XX XXX XXXX</a>
         </p>
       </div>
@@ -370,17 +360,17 @@
         <span class="footer__logo">
           <span class="navbar__logo-d">D</span>AVINCHI
         </span>
-        <p class="footer__tagline">El arte del corte. La elegancia del estilo.</p>
-        <div class="footer__social" role="list" aria-label="Redes sociales">
+        <p class="footer__tagline" data-i18n="footer-tagline">The art of the cut. The elegance of style.</p>
+        <div class="footer__social" role="list" aria-label="Social media">
           <a href="https://www.instagram.com/davinchi_barber_shop" class="footer__social-link" id="footer-instagram"
-            target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram de Davinchi BarberShop">
+            target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram of Davinchi BarberShop">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
             </svg>
           </a>
           <a href="https://wa.me/573XXXXXXXXX" class="footer__social-link" id="footer-whatsapp" target="_blank"
-            rel="noopener noreferrer" role="listitem" aria-label="WhatsApp de Davinchi BarberShop">
+            rel="noopener noreferrer" role="listitem" aria-label="WhatsApp of Davinchi BarberShop">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -388,7 +378,7 @@
           </a>
           <a href="https://www.google.com/maps/place/Davinchi+Barber+Shop+(We+speak+english)/@6.2107888,-75.5729951,17z"
             class="footer__social-link" id="footer-maps" target="_blank" rel="noopener noreferrer" role="listitem"
-            aria-label="Davinchi BarberShop en Google Maps">
+            aria-label="Davinchi BarberShop on Google Maps">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z" />
@@ -398,18 +388,18 @@
       </div>
 
       <div class="footer__links">
-        <h3 class="footer__heading">Navegación</h3>
+        <h3 class="footer__heading" data-i18n="footer-nav-title">Navigation</h3>
         <ul class="footer__list">
-          <li><a href="#hero" class="footer__link">Inicio</a></li>
-          <li><a href="#services" class="footer__link">Servicios</a></li>
-          <li><a href="#gallery" class="footer__link">Galería</a></li>
-          <li><a href="#about" class="footer__link">Nosotros</a></li>
-          <li><a href="#contact" class="footer__link">Contacto</a></li>
+          <li><a href="#hero" class="footer__link" data-i18n="nav-home">Home</a></li>
+          <li><a href="#services" class="footer__link" data-i18n="nav-services">Services</a></li>
+          <li><a href="#gallery" class="footer__link" data-i18n="nav-gallery">Gallery</a></li>
+          <li><a href="#about" class="footer__link" data-i18n="nav-about">About Us</a></li>
+          <li><a href="#contact" class="footer__link" data-i18n="nav-contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer__contact">
-        <h3 class="footer__heading">Contacto</h3>
+        <h3 class="footer__heading" data-i18n="footer-contact-title">Contact</h3>
         <address class="footer__address">
           <p>📍 Medellín, Colombia</p>
           <p>🕐 Lun – Sáb: 9AM – 7PM</p>
@@ -429,10 +419,10 @@
 
     <div class="footer__bottom">
       <p class="footer__copyright">
-        © <span id="footer-year"></span> Davinchi BarberShop. Todos los derechos reservados.
+        © <span id="footer-year"></span> Davinchi BarberShop. <span data-i18n="footer-copyright">All rights reserved.</span>
       </p>
-      <p class="footer__credit">
-        Diseño y desarrollo con ❤️ para el arte del corte.
+      <p class="footer__credit" data-i18n="footer-credit">
+        Design and development with ❤️ for the art of the cut.
       </p>
     </div>
   </footer>
@@ -442,5 +432,4 @@
   <script src="js/navbar.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>
