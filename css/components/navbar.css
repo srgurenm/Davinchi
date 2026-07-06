@@ -32,6 +32,17 @@
   gap: var(--space-xl);
 }
 
+@media (max-width: 600px) {
+  .navbar__container {
+    gap: var(--space-sm);
+  }
+  .navbar__cta {
+    width: 100px; /* Make it smaller on very small phones */
+    height: 35px;
+    font-size: 0.7rem;
+  }
+}
+
 /* ─── Logo ─── */
 .navbar__logo {
   font-family: var(--font-headline);

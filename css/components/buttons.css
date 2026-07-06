@@ -167,9 +167,10 @@
   cursor: pointer;
   transition-duration: 1s;
   overflow: hidden;
-  text-decoration: none; /* Added for <a> tag */
-  font-weight: 600; /* Added for better text appearance */
-  font-family: var(--font-sans); /* Ensure consistency */
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.8rem; /* Added */
 }
 
 .btn--book-now::before {
