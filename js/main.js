@@ -19,7 +19,7 @@ const CONFIG = {
    * WhatsApp number — full international format, digits only
    * Example: '573001234567' (Colombia +57, then 10 digits)
    */
-  WHATSAPP_NUMBER: '573XXXXXXXXX',
+  WHATSAPP_NUMBER: '573022903588',
 
   /**
    * Default WhatsApp message (URL-encoded)
@@ -185,7 +185,7 @@ function initGalleryLightbox() {
    Updates visible phone text with real number
 ────────────────────────────────────────────── */
 function updatePhoneNumbers() {
-  const DISPLAY_NUMBER = '+57 3XX XXX XXXX'; // Update with real number
+  const DISPLAY_NUMBER = '+57 302 290 3588'; // Update with real number
   const phoneEls = document.querySelectorAll('#cta-phone-link, #footer-phone');
 
   phoneEls.forEach((el) => {
