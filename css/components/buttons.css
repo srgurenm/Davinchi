@@ -134,56 +134,57 @@
 }
 
 /* ─────────────────────────────────────────────
-   BOOK NOW BUTTON (UPDATED TO GOLDEN STYLE)
+   BOOK NOW BUTTON (VINODJANGID07 STYLE)
 ────────────────────────────────────────────── */
 .btn--book-now {
-  touch-action: manipulation;
+  width: 180px; /* Ajustado para que el texto sea visible */
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  outline: none;
-  font-family: inherit;
-  font-size: 0.85em;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 0.3em;
-  height: 2.5em;
-  text-transform: uppercase;
-  padding: 0 1.2em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
-    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
-    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-  background-image: linear-gradient(
-    160deg,
-    #a54e07,
-    #b47e11,
-    #fef1a2,
-    #bc881b,
-    #a54e07
-  );
-  border: 1px solid #a55d07;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  background-size: 100% 100%;
-  background-position: center;
-  font-weight: 700;
+  transition-duration: 1s;
+  overflow: hidden;
   text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
-.btn--book-now:focus,
+.btn--book-now::before {
+  position: absolute;
+  content: "BOOK NOW"; /* Cambiado de SUBSCRIBE a BOOK NOW */
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(26, 26, 28, 0.95);
+  background-size: 200%;
+}
+
 .btn--book-now:hover {
-  background-size: 150% 150%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
-    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-  border: 1px solid rgba(165, 93, 7, 0.6);
-  color: #fff;
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.btn--book-now:hover::before {
+  background-position: right;
+  transition-duration: 1s;
 }
 
 .btn--book-now:active {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
-    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
   transform: scale(0.95);
 }
 
