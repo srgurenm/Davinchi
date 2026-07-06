@@ -3,9 +3,6 @@
    Davinchi BarberShop
    ─────────────────────────────────────────────────────────────
    ★ ANIMATED GLOW BUTTON (.btn--glow)
-     From Uiverse.io by cssbuttons-io — adapted to Davinchi palette
-     To REPLACE: swap the .btn--glow rules with your preferred style.
-     All other button variants are independent and unaffected.
    ============================================================ */
 
 /* ─────────────────────────────────────────────
@@ -39,78 +36,54 @@
 }
 
 /* ─────────────────────────────────────────────
-   ★ GLOW BUTTON — Uiverse.io adaptation
-     Colors adapted to Davinchi gold palette.
-     Easy to replace: see comment above.
+   GOLDEN BUTTON
+   From Uiverse.io by elijahgummer
 ────────────────────────────────────────────── */
-.btn--glow {
-  /* Color tokens for glow button — tweak these to restyle */
-  --glow-color:        rgb(166, 124, 0);           /* Aged Gold */
-  --glow-spread-color: rgba(166, 124, 0, 0.55);    /* Aged Gold translucent */
-  --btn-color:         rgb(50, 38, 0);             /* Dark Aged Gold bg */
-
-  border: 0.2em solid var(--glow-color);
-  padding: 0.9em 2.2em;
-  color: var(--glow-color);
-  font-size: 0.85rem;
-  font-weight: 700;
-  background-color: var(--btn-color);
-  border-radius: 0.4em;
+.golden-button {
+  touch-action: manipulation;
+  display: inline-block;
   outline: none;
-  box-shadow:
-    0 0 0.8em 0.2em var(--glow-color),
-    0 0 3em 0.8em var(--glow-spread-color),
-    inset 0 0 0.6em 0.2em var(--glow-color);
-  text-shadow: 0 0 0.4em var(--glow-color);
-  position: relative;
-  transition: all 0.3s;
-  letter-spacing: 0.1em;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  padding: 0 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
 }
 
-.btn--glow::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  top: 120%;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--glow-spread-color);
-  filter: blur(2em);
-  opacity: 0.6;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
-  transition: opacity 0.3s;
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
 }
 
-.btn--glow:hover {
-  color: var(--btn-color);
-  background-color: var(--glow-color);
-  box-shadow:
-    0 0 0.8em 0.2em var(--glow-color),
-    0 0 4em 1.5em var(--glow-spread-color),
-    inset 0 0 0.6em 0.2em var(--glow-color);
-}
-
-.btn--glow:active {
-  box-shadow:
-    0 0 0.5em 0.2em var(--glow-color),
-    0 0 2em 1.5em var(--glow-spread-color),
-    inset 0 0 0.4em 0.2em var(--glow-color);
-}
-
-/* Large variant for CTA section */
-.btn--glow-large {
-  font-size: 1rem;
-  padding: 1em 2.8em;
-}
-
-@media (max-width: 600px) {
-  .btn--glow-large {
-    padding: 0.8em 1.5em;
-    font-size: 0.9rem;
-    white-space: normal;
-    text-align: center;
-  }
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
 }
 
 /* ─────────────────────────────────────────────
