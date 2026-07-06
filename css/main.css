@@ -7,20 +7,20 @@
    1. DESIGN TOKENS (Custom Properties)
 ─────────────────────────────────────────── */
 :root {
-  /* Color palette — classic barbershop with contemporary edge */
-  --color-black:       #0a0a0a;
-  --color-dark:        #111111;
-  --color-dark-alt:    #1a1a1a;
-  --color-surface:     #161616;
-  --color-surface-alt: #1e1e1e;
+  /* Color palette — Blackberry Black & Aged Gold */
+  --color-black:       #1a1a1c;
+  --color-dark:        #222024;
+  --color-dark-alt:    #28262a;
+  --color-surface:     #2c2a2e;
+  --color-surface-alt: #353238;
   --color-border:      rgba(255, 255, 255, 0.06);
-  --color-border-gold: rgba(196, 155, 58, 0.3);
+  --color-border-gold: rgba(166, 124, 0, 0.3);
 
-  /* Gold accent palette */
-  --color-gold:        #c49b3a;
-  --color-gold-light:  #d4ac4e;
-  --color-gold-pale:   #e8c878;
-  --color-gold-muted:  rgba(196, 155, 58, 0.12);
+  /* Gold accent palette — Aged, non-neon */
+  --color-gold:        #a67c00;
+  --color-gold-light:  #b8860b;
+  --color-gold-pale:   #d4af37;
+  --color-gold-muted:  rgba(166, 124, 0, 0.12);
 
   /* Cream / off-white */
   --color-cream:       #f5f0e8;

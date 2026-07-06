@@ -45,9 +45,9 @@
 ────────────────────────────────────────────── */
 .btn--glow {
   /* Color tokens for glow button — tweak these to restyle */
-  --glow-color:        rgb(196, 155, 58);           /* Gold */
-  --glow-spread-color: rgba(196, 155, 58, 0.55);    /* Gold translucent */
-  --btn-color:         rgb(60, 46, 12);             /* Dark gold bg */
+  --glow-color:        rgb(166, 124, 0);           /* Aged Gold */
+  --glow-spread-color: rgba(166, 124, 0, 0.55);    /* Aged Gold translucent */
+  --btn-color:         rgb(50, 38, 0);             /* Dark Aged Gold bg */
 
   border: 0.2em solid var(--glow-color);
   padding: 0.9em 2.2em;
@@ -156,10 +156,10 @@
   height: 40px;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background: linear-gradient(to right,#8a6600,#d4af37,#8a6600,#8a6600,#d4af37,#8a6600);
   background-size: 250%;
   background-position: left;
-  color: #ffd277;
+  color: #d4af37;
   position: relative;
   display: flex;
   align-items: center;
@@ -170,13 +170,13 @@
   text-decoration: none;
   font-weight: 600;
   font-family: var(--font-sans);
-  font-size: 0.8rem; /* Added */
+  font-size: 0.8rem;
 }
 
 .btn--book-now::before {
   position: absolute;
-  content: "BOOK NOW"; /* Adapted from SUBSCRIBE */
-  color: #ffd277;
+  content: "BOOK NOW";
+  color: #d4af37;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,7 +184,7 @@
   height: 90%;
   border-radius: 8px;
   transition-duration: 1s;
-  background-color: rgba(0, 0, 0, 0.842);
+  background-color: rgba(26, 26, 28, 0.95); /* Blackberry Black base */
   background-size: 200%;
 }
 
