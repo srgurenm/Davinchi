@@ -73,3 +73,4 @@ Edita directamente el `index.html`:
 - **Instagram**: [davinchi_barber_shop](https://www.instagram.com/davinchi_barber_shop)
 - **Google Maps**: [Ver ubicación](https://www.google.com/maps/place/Davinchi+Barber+Shop+(We+speak+english))
 - **WhatsApp**: Configurable en `js/main.js`
+ 
