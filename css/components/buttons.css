@@ -55,6 +55,94 @@
     inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
 }
 
+/* Alias classes to use the same golden-button style */
+.btn--gold,
+.btn--appointment,
+.btn--book-now {
+  /* Inherit styles by composition or simple selector grouping if needed, 
+     but here we just ensure the HTML uses the 'golden-button' class */
+}
+
+/* ─────────────────────────────────────────────
+   INSTAGRAM BUTTON
+   From Uiverse.io by ParasSalunke
+────────────────────────────────────────────── */
+.btn--instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 1rem;
+  height: 50px;
+  background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  text-decoration: none;
+  width: auto;
+  min-width: 50px;
+}
+
+.btn--instagram:hover {
+  width: 220px;
+}
+
+.btn--instagram__icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.btn--instagram__text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn--instagram:hover .btn--instagram__text {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────
+   OUTLINE BUTTON
+────────────────────────────────────────────── */
+.btn--outline {
+  padding: 0.9em 2em;
+  border: 1px solid rgba(196, 155, 58, 0.4);
+  color: var(--color-cream-muted);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.08em;
+  transition: border-color var(--transition-std), color var(--transition-std),
+              background var(--transition-std);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn--outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: rgba(196, 155, 58, 0.06);
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
 /* ─────────────────────────────────────────────
    INSTAGRAM BUTTON
    From Uiverse.io by simontheonlyone
