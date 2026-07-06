@@ -1,0 +1,223 @@
+/* ============================================================
+   HERO SECTION COMPONENT
+   Davinchi BarberShop
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-black);
+  /* Subtle diagonal stripe pattern — unique, non-generic touch */
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 80px,
+      rgba(196, 155, 58, 0.012) 80px,
+      rgba(196, 155, 58, 0.012) 81px
+    );
+}
+
+/* ─── Background overlay ─── */
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 80% at 70% 50%, rgba(196, 155, 58, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 10% 90%, rgba(196, 155, 58, 0.04) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(10,10,10,0.7) 100%);
+  z-index: 1;
+}
+
+/* ─── Floating particles container ─── */
+.hero__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual particle — created by JS */
+.hero__particle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0%   { opacity: 0;   transform: translateY(0) scale(1); }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { opacity: 0;   transform: translateY(-120vh) scale(0.3); }
+}
+
+/* ─── Content ─── */
+.hero__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8rem var(--gutter) 4rem;
+}
+
+/* ─── Tagline ─── */
+.hero__tagline {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xl);
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 0.3s forwards;
+}
+
+/* ─── Main title ─── */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-cream);
+  margin-bottom: var(--space-xl);
+  max-width: 14ch;
+
+  opacity: 0;
+  animation: fadeSlideUp 0.9s ease 0.5s forwards;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--color-gold);
+  position: relative;
+  display: inline-block;
+}
+
+/* Gold underline on italic text */
+.hero__title em::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+/* ─── Subtitle ─── */
+.hero__subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+  max-width: 45ch;
+  opacity: 0;
+  animation: fadeSlideUp 0.9s ease 0.7s forwards;
+}
+
+/* ─── CTA Group ─── */
+.hero__cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeSlideUp 0.9s ease 0.9s forwards;
+}
+
+/* ─── Scroll indicator ─── */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  opacity: 0;
+  animation: fadeIn 1s ease 1.4s forwards;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(180deg, transparent, var(--color-gold));
+  animation: scrollPulse 2s ease infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+.hero__scroll-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  writing-mode: vertical-rl;
+}
+
+/* ─── Decorative diagonal element ─── */
+.hero__decorator {
+  position: absolute;
+  right: -5%;
+  top: 0;
+  bottom: 0;
+  width: 45%;
+  background: linear-gradient(
+    160deg,
+    transparent 0%,
+    rgba(196,155,58,0.02) 40%,
+    rgba(196,155,58,0.05) 60%,
+    transparent 100%
+  );
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ─── Entrance animations ─── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero__content {
+    padding-top: 7rem;
+    text-align: center;
+  }
+
+  .hero__title {
+    max-width: 100%;
+  }
+
+  .hero__cta-group {
+    justify-content: center;
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+
+  .hero__decorator {
+    display: none;
+  }
+}

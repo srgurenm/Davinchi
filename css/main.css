@@ -1,0 +1,470 @@
+/* ============================================================
+   MAIN CSS — Design Tokens & Global Styles
+   Davinchi BarberShop
+   ============================================================ */
+
+/* ───────────────────────────────────────────
+   1. DESIGN TOKENS (Custom Properties)
+─────────────────────────────────────────── */
+:root {
+  /* Color palette — classic barbershop with contemporary edge */
+  --color-black:       #0a0a0a;
+  --color-dark:        #111111;
+  --color-dark-alt:    #1a1a1a;
+  --color-surface:     #161616;
+  --color-surface-alt: #1e1e1e;
+  --color-border:      rgba(255, 255, 255, 0.06);
+  --color-border-gold: rgba(196, 155, 58, 0.3);
+
+  /* Gold accent palette */
+  --color-gold:        #c49b3a;
+  --color-gold-light:  #d4ac4e;
+  --color-gold-pale:   #e8c878;
+  --color-gold-muted:  rgba(196, 155, 58, 0.12);
+
+  /* Cream / off-white */
+  --color-cream:       #f5f0e8;
+  --color-cream-muted: #c8bfa8;
+
+  /* Text hierarchy */
+  --color-text-primary:   #f0ece4;
+  --color-text-secondary: #9e9589;
+  --color-text-muted:     #6b6560;
+
+  /* Typography scale */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-sans:     'Inter', system-ui, sans-serif;
+  --font-headline: 'Bebas Neue', 'Impact', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* Layout */
+  --max-width:    1200px;
+  --max-width-sm: 800px;
+  --gutter:       clamp(1rem, 4vw, 2rem);
+
+  /* Borders */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,0.6);
+  --shadow-gold: 0 0 20px rgba(196,155,58,0.15);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-std:  0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  /* Z-index layers */
+  --z-base:    1;
+  --z-overlay: 10;
+  --z-nav:     100;
+  --z-modal:   200;
+}
+
+/* ───────────────────────────────────────────
+   2. CSS RESET & BASE
+─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ───────────────────────────────────────────
+   3. TYPOGRAPHY UTILITIES
+─────────────────────────────────────────── */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  position: relative;
+  padding-left: 2rem;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.4rem;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.section-label--light {
+  color: var(--color-gold-pale);
+}
+
+.section-label--light::before {
+  background: var(--color-gold-pale);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 50ch;
+  line-height: 1.7;
+}
+
+/* ───────────────────────────────────────────
+   4. STATS SECTION
+─────────────────────────────────────────── */
+.stats {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border-gold);
+  border-bottom: 1px solid var(--color-border-gold);
+  padding: var(--space-3xl) var(--gutter);
+}
+
+.stats__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.stats__item {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.stats__number {
+  font-family: var(--font-headline);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-gold);
+  line-height: 1;
+  display: inline-block;
+}
+
+.stats__plus {
+  font-family: var(--font-headline);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.stats__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-sm);
+}
+
+.stats__divider {
+  width: 1px;
+  height: 60px;
+  background: var(--color-border-gold);
+  flex-shrink: 0;
+}
+
+/* ───────────────────────────────────────────
+   5. ABOUT SECTION
+─────────────────────────────────────────── */
+.about {
+  padding: var(--space-5xl) var(--gutter);
+  background: var(--color-dark);
+  overflow: hidden;
+}
+
+.about__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.about__image-col {
+  position: relative;
+}
+
+.about__image-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about__image-frame:hover .about__img {
+  transform: scale(1.04);
+}
+
+.about__image-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 80%;
+  height: 80%;
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.about__badge {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 88px;
+  height: 88px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: var(--shadow-gold);
+}
+
+.about__badge-text {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.about__text {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.8;
+}
+
+.about__values {
+  margin: var(--space-xl) 0 var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about__value-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.about__value-icon {
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ───────────────────────────────────────────
+   6. CTA SECTION
+─────────────────────────────────────────── */
+.cta-section {
+  position: relative;
+  padding: var(--space-5xl) var(--gutter);
+  background: var(--color-dark-alt);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: 'D';
+  font-family: var(--font-headline);
+  font-size: 40vw;
+  color: rgba(196, 155, 58, 0.025);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+.cta-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(196,155,58,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-section__content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width-sm);
+  margin: 0 auto;
+}
+
+.cta-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+}
+
+.cta-section__title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.cta-section__subtitle {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2xl);
+  font-size: 1.05rem;
+}
+
+.cta-section__hours {
+  margin-top: var(--space-xl);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.cta-section__phone {
+  color: var(--color-gold);
+  transition: color var(--transition-fast);
+}
+
+.cta-section__phone:hover {
+  color: var(--color-gold-pale);
+}
+
+/* ───────────────────────────────────────────
+   7. SCROLL ANIMATIONS (base state)
+─────────────────────────────────────────── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate-delay="100"] { transition-delay: 0.1s; }
+[data-animate-delay="200"] { transition-delay: 0.2s; }
+[data-animate-delay="300"] { transition-delay: 0.3s; }
+[data-animate-delay="400"] { transition-delay: 0.4s; }
+[data-animate-delay="500"] { transition-delay: 0.5s; }
+
+/* ───────────────────────────────────────────
+   8. RESPONSIVE BREAKPOINTS
+─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .about__image-col {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .stats__divider {
+    display: none;
+  }
+
+  .stats__container {
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats__item {
+    flex: 0 0 50%;
+  }
+
+  .about__badge {
+    width: 72px;
+    height: 72px;
+  }
+}

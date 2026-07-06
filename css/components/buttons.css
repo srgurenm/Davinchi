@@ -1,0 +1,191 @@
+/* ============================================================
+   BUTTONS COMPONENT
+   Davinchi BarberShop
+   ─────────────────────────────────────────────────────────────
+   ★ ANIMATED GLOW BUTTON (.btn--glow)
+     From Uiverse.io by cssbuttons-io — adapted to Davinchi palette
+     To REPLACE: swap the .btn--glow rules with your preferred style.
+     All other button variants are independent and unaffected.
+   ============================================================ */
+
+/* ─────────────────────────────────────────────
+   BASE BUTTON RESET
+────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: all var(--transition-std);
+  position: relative;
+  overflow: visible;
+}
+
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────
+   ★ GLOW BUTTON — Uiverse.io adaptation
+     Colors adapted to Davinchi gold palette.
+     Easy to replace: see comment above.
+────────────────────────────────────────────── */
+.btn--glow {
+  /* Color tokens for glow button — tweak these to restyle */
+  --glow-color:        rgb(196, 155, 58);           /* Gold */
+  --glow-spread-color: rgba(196, 155, 58, 0.55);    /* Gold translucent */
+  --btn-color:         rgb(60, 46, 12);             /* Dark gold bg */
+
+  border: 0.2em solid var(--glow-color);
+  padding: 0.9em 2.2em;
+  color: var(--glow-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background-color: var(--btn-color);
+  border-radius: 0.4em;
+  outline: none;
+  box-shadow:
+    0 0 0.8em 0.2em var(--glow-color),
+    0 0 3em 0.8em var(--glow-spread-color),
+    inset 0 0 0.6em 0.2em var(--glow-color);
+  text-shadow: 0 0 0.4em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  letter-spacing: 0.1em;
+}
+
+.btn--glow::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.6;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+  transition: opacity 0.3s;
+}
+
+.btn--glow:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow:
+    0 0 0.8em 0.2em var(--glow-color),
+    0 0 4em 1.5em var(--glow-spread-color),
+    inset 0 0 0.6em 0.2em var(--glow-color);
+}
+
+.btn--glow:active {
+  box-shadow:
+    0 0 0.5em 0.2em var(--glow-color),
+    0 0 2em 1.5em var(--glow-spread-color),
+    inset 0 0 0.4em 0.2em var(--glow-color);
+}
+
+/* Large variant for CTA section */
+.btn--glow-large {
+  font-size: 1rem;
+  padding: 1em 2.8em;
+}
+
+/* ─────────────────────────────────────────────
+   OUTLINE BUTTON
+────────────────────────────────────────────── */
+.btn--outline {
+  padding: 0.9em 2em;
+  border: 1px solid rgba(196, 155, 58, 0.4);
+  color: var(--color-cream-muted);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.08em;
+  transition: border-color var(--transition-std), color var(--transition-std),
+              background var(--transition-std);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: rgba(196, 155, 58, 0.06);
+}
+
+/* ─────────────────────────────────────────────
+   GOLD SOLID BUTTON
+────────────────────────────────────────────── */
+.btn--gold {
+  padding: 0.9em 2.2em;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: background var(--transition-std), transform var(--transition-fast),
+              box-shadow var(--transition-std);
+}
+
+.btn--gold:hover {
+  background: var(--color-gold-light);
+  box-shadow: 0 4px 20px rgba(196, 155, 58, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn--gold:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   WHATSAPP BUTTON (navbar variant)
+────────────────────────────────────────────── */
+.btn--whatsapp {
+  padding: 0.65em 1.4em;
+  background: #25D366;
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background var(--transition-std), box-shadow var(--transition-std);
+}
+
+.btn--whatsapp:hover {
+  background: #20BA5A;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+/* ─────────────────────────────────────────────
+   INSTAGRAM BUTTON
+────────────────────────────────────────────── */
+.btn--instagram {
+  padding: 0.9em 2.2em;
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: opacity var(--transition-std), transform var(--transition-fast),
+              box-shadow var(--transition-std);
+}
+
+.btn--instagram:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(131, 58, 180, 0.4);
+}
+
+.btn--instagram:active {
+  transform: translateY(0);
+}

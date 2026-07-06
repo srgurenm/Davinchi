@@ -1,0 +1,146 @@
+/* ============================================================
+   FOOTER COMPONENT
+   Davinchi BarberShop
+   ============================================================ */
+
+.footer {
+  background: var(--color-dark);
+  border-top: 1px solid var(--color-border-gold);
+  padding-top: var(--space-4xl);
+}
+
+.footer__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+/* ─── Brand column ─── */
+.footer__brand {}
+
+.footer__logo {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-primary);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.footer__tagline {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  max-width: 28ch;
+}
+
+/* ─── Social links ─── */
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer__social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  transition: border-color var(--transition-std), color var(--transition-std),
+              background var(--transition-std), transform var(--transition-fast);
+}
+
+.footer__social-link:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: rgba(196, 155, 58, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── Links column ─── */
+.footer__heading {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xl);
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-text-primary);
+}
+
+/* ─── Contact column ─── */
+.footer__address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ─── Bottom bar ─── */
+.footer__bottom {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-xl) var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.footer__copyright,
+.footer__credit {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

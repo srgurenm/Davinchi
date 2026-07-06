@@ -1,0 +1,205 @@
+/* ============================================================
+   NAVBAR COMPONENT
+   Davinchi BarberShop
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  padding: 1.2rem var(--gutter);
+  transition: background var(--transition-std), padding var(--transition-std),
+              box-shadow var(--transition-std);
+}
+
+/* Scrolled state — added by JS */
+.navbar.is-scrolled {
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.8rem var(--gutter);
+  box-shadow: 0 1px 0 rgba(196,155,58,0.15), var(--shadow-md);
+}
+
+.navbar__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+/* ─── Logo ─── */
+.navbar__logo {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  flex-direction: column;
+  line-height: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  opacity: 0.85;
+}
+
+.navbar__logo-d {
+  color: var(--color-gold);
+  font-size: 1.6rem;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.45rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-top: 0.1rem;
+}
+
+/* ─── Navigation links ─── */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.navbar__link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--transition-fast);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--transition-std);
+}
+
+.navbar__link:hover,
+.navbar__link.is-active {
+  color: var(--color-text-primary);
+}
+
+.navbar__link:hover::after,
+.navbar__link.is-active::after {
+  width: 100%;
+}
+
+/* ─── Nav CTA ─── */
+.navbar__cta {
+  flex-shrink: 0;
+}
+
+/* ─── Hamburger toggle (mobile) ─── */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  z-index: calc(var(--z-nav) + 1);
+}
+
+.navbar__toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-std), opacity var(--transition-std),
+              background var(--transition-fast);
+}
+
+/* Toggle open state */
+.navbar__toggle.is-open .navbar__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle.is-open .navbar__toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar__toggle.is-open .navbar__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile responsive ─── */
+@media (max-width: 900px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 85vw);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+    padding: var(--space-4xl) var(--space-2xl);
+    background: var(--color-dark);
+    border-left: 1px solid var(--color-border-gold);
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
+    z-index: var(--z-nav);
+  }
+
+  .navbar__nav.is-open {
+    transform: translateX(0);
+  }
+
+  .navbar__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .navbar__link {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Backdrop for mobile menu */
+  .navbar__backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: calc(var(--z-nav) - 1);
+  }
+
+  .navbar__backdrop.is-open {
+    display: block;
+  }
+}

@@ -1,0 +1,163 @@
+/* ============================================================
+   GALLERY SECTION COMPONENT
+   Davinchi BarberShop
+   ============================================================ */
+
+.gallery {
+  padding: var(--space-5xl) var(--gutter);
+  background: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.gallery__header {
+  text-align: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.gallery__header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* ─── Masonry-inspired grid ─── */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--space-md);
+}
+
+/* ─── Individual items ─── */
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  cursor: zoom-in;
+}
+
+/* Large item spans 2 rows */
+.gallery__item--large {
+  grid-row: span 2;
+  aspect-ratio: unset;
+}
+
+/* Wide item spans 2 columns */
+.gallery__item--wide {
+  grid-column: span 2;
+}
+
+/* ─── Image ─── */
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.4s ease;
+  filter: brightness(0.85) saturate(0.9);
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.08);
+  filter: brightness(1) saturate(1.1);
+}
+
+/* ─── Caption overlay ─── */
+.gallery__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-xl) var(--space-lg) var(--space-md);
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: var(--color-cream);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform var(--transition-std), opacity var(--transition-std);
+}
+
+.gallery__item:hover .gallery__caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Gold corner accent on hover */
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.gallery__item:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─── Placeholder indicator ─── */
+.gallery__item::before {
+  content: '📷 Reemplazar con foto real';
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: 0.55rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.5);
+  padding: 0.2em 0.6em;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ─── Instagram CTA ─── */
+.gallery__instagram-cta {
+  text-align: center;
+  margin-top: var(--space-3xl);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__item--large {
+    grid-row: span 1;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 580px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 1;
+  }
+
+  .gallery__caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

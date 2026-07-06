@@ -1,0 +1,167 @@
+/* ============================================================
+   SERVICES SECTION COMPONENT
+   Davinchi BarberShop
+   ============================================================ */
+
+.services {
+  padding: var(--space-5xl) var(--gutter);
+  background: var(--color-black);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background decorative text */
+.services::before {
+  content: 'SERVICES';
+  font-family: var(--font-headline);
+  font-size: clamp(6rem, 14vw, 14rem);
+  color: rgba(255,255,255,0.018);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: 0.1em;
+}
+
+.services__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.services__header {
+  text-align: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.services__header .section-subtitle {
+  max-width: 55ch;
+  margin: 0 auto;
+}
+
+/* ─── Service Cards Grid ─── */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+/* ─── Individual Card ─── */
+.service-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl) var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-std), transform var(--transition-std),
+              box-shadow var(--transition-std);
+  cursor: default;
+}
+
+/* Top accent line */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-std);
+}
+
+.service-card:hover {
+  border-color: var(--color-border-gold);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* Featured card variant */
+.service-card--featured {
+  background: linear-gradient(145deg, #1a1608 0%, var(--color-surface) 100%);
+  border-color: rgba(196, 155, 58, 0.2);
+}
+
+.service-card--featured::before {
+  opacity: 0.6;
+}
+
+/* ─── Badge ─── */
+.service-card__badge {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  background: var(--color-gold);
+  padding: 0.2em 0.7em;
+  border-radius: var(--radius-full);
+}
+
+/* ─── Icon ─── */
+.service-card__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: var(--space-lg);
+  display: block;
+}
+
+/* ─── Title ─── */
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* ─── Description ─── */
+.service-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+/* ─── Price ─── */
+.service-card__price {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+}
+
+/* ─── CTA ─── */
+.services__cta {
+  text-align: center;
+  margin-top: var(--space-4xl);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
