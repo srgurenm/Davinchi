@@ -134,58 +134,36 @@
 }
 
 /* ─────────────────────────────────────────────
-   BOOK NOW BUTTON (VINODJANGID07 STYLE)
+   BOOK APPOINTMENT (SIMPLIFIED GOLD BUTTON)
 ────────────────────────────────────────────── */
-.btn--book-now {
-  width: 180px; /* Ajustado para que el texto sea visible */
-  height: 45px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
-  background-size: 250%;
-  background-position: left;
-  color: #ffd277;
-  position: relative;
+.btn--appointment {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition-duration: 1s;
-  overflow: hidden;
-  text-decoration: none;
+  gap: 0.8rem;
+  padding: 0.8em 1.5em;
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  border-radius: var(--radius-sm);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
   font-family: var(--font-sans);
   font-size: 0.9rem;
-  text-transform: uppercase;
+  transition: all var(--transition-std);
+  cursor: pointer;
 }
 
-.btn--book-now::before {
-  position: absolute;
-  content: "BOOK NOW"; /* Cambiado de SUBSCRIBE a BOOK NOW */
-  color: #ffd277;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 97%;
-  height: 90%;
-  border-radius: 8px;
-  transition-duration: 1s;
-  background-color: rgba(26, 26, 28, 0.95);
-  background-size: 200%;
+.btn--appointment:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
 }
 
-.btn--book-now:hover {
-  background-position: right;
-  transition-duration: 1s;
-}
-
-.btn--book-now:hover::before {
-  background-position: right;
-  transition-duration: 1s;
-}
-
-.btn--book-now:active {
-  transform: scale(0.95);
+.btn--appointment__icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* ─────────────────────────────────────────────
