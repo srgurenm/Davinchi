@@ -52,38 +52,86 @@
 
 /* ─── Individual Card ─── */
 .service-card {
+  width: 100%; /* Adapts to grid */
+  height: auto; /* Adjusts to content */
+  min-height: 250px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: var(--space-2xl) var(--space-xl);
+  padding: var(--space-xl);
   position: relative;
   overflow: hidden;
-  transition: border-color var(--transition-std), transform var(--transition-std),
-              box-shadow var(--transition-std);
-  cursor: default;
+  transition: all 300ms;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Top accent line */
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+.service-card .content {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card .content::before {
   opacity: 0;
-  transition: opacity var(--transition-std);
+  transition: opacity 300ms;
+  content: " ";
+  display: block;
+  background: white;
+  width: 5px;
+  height: 50px;
+  position: absolute;
+  filter: blur(50px);
+  overflow: hidden;
 }
 
-.service-card:hover {
-  border-color: var(--color-border-gold);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg), var(--shadow-gold);
+.service-card:hover .content::before {
+  opacity: 1;
+}
+
+.service-card::before {
+  opacity: 0;
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 360px;
+  /* Use Gold instead of pink/blue */
+  background: linear-gradient(var(--color-gold), var(--color-black));
+  transition: opacity 300ms;
+  animation: rotation_9018 8000ms infinite linear;
+  animation-play-state: paused;
 }
 
 .service-card:hover::before {
   opacity: 1;
+  animation-play-state: running;
+}
+
+.service-card::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background: var(--color-surface);
+  backdrop-filter: blur(50px);
+  border-radius: var(--radius-md);
+}
+
+@keyframes rotation_9018 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Featured card variant */
