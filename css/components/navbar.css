@@ -37,9 +37,10 @@
     gap: var(--space-sm);
   }
   .navbar__cta {
-    width: 100px; /* Make it smaller on very small phones */
+    width: auto; /* Dejar que se ajuste al contenido */
     height: 35px;
-    font-size: 0.7rem;
+    font-size: 0.65rem; /* Fuente más pequeña en móvil */
+    padding: 0 0.8rem;
   }
 }
 
