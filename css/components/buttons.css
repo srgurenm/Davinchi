@@ -110,6 +110,7 @@
   width: 55px;
   height: 55px;
   transition: transform 0.3s;
+  position: relative;
 }
 .icon:hover .layer {
   transform: rotate(-35deg) skew(20deg);
@@ -123,6 +124,9 @@
   border: 1px solid #fff;
   border-radius: 15px;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .layer span,
@@ -171,6 +175,11 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+.instagramSVG::before {
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 .user { display: flex; gap: 10px; }
 .img {
