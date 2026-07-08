@@ -6,23 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Davinchi BarberShop — Barbería élite en Medellín. Cortes de cabello, diseño de barba y estilo clásico con toque contemporáneo. ¡Reserva tu cita por WhatsApp! We speak English." />
-  <meta name="keywords" content="barberia medellin, barber shop medellin, barberia el poblado, best barber shop medellin, corte de cabello medellin, davinchi barber shop, barberia bilingue medellin, fade cut medellin, barberia laureles, arreglar barba medellin" />
-  
-  <!-- Etiquetas para compartir en redes -->
+  <meta name="keywords"
+    content="barberia medellin, barber shop medellin, barberia el poblado, best barber shop medellin, corte de cabello medellin, davinchi barber shop, barberia bilingue medellin, fade cut medellin, barberia laureles, arreglar barba medellin" />
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://davinchibarbershop.com/" />
   <meta property="og:title" content="Davinchi BarberShop — La Mejor Barbería en Medellín" />
-  <meta property="og:description" content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
+  <meta property="og:description"
+    content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
   <meta property="og:image" content="https://davinchibarbershop.com/assets/images/interior.png" />
 
-  <!-- Etiquetas para Twitter -->
+  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://davinchibarbershop.com/" />
   <meta property="twitter:title" content="Davinchi BarberShop — La Mejor Barbería en Medellín" />
-  <meta property="twitter:description" content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
+  <meta property="twitter:description"
+    content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
   <meta property="twitter:image" content="https://davinchibarbershop.com/assets/images/interior.png" />
 
-  <!-- SEO: Datos del negocio para Google -->
+  <!-- Local Business  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,19 +71,17 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
   <title>Davinchi BarberShop — La Mejor Barbería en Medellín</title>
 
-  <!-- Fuentes -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap"
     rel="stylesheet" />
 
-  <!-- Iconos -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Estilos -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/components/navbar.css" />
   <link rel="stylesheet" href="css/components/hero.css" />
@@ -95,7 +96,7 @@
 
 <body>
 
-  <!-- Barra de navegación -->
+  <!--  NAVBAR  -->
   <header class="navbar" id="navbar">
     <div class="navbar__container">
       <a href="#hero" class="navbar__logo" id="nav-logo">
@@ -103,16 +104,16 @@
         <span class="navbar__logo-sub">BARBER SHOP</span>
       </a>
 
-      <!-- Acciones: Idioma y reserva -->
+      <!-- Header Actions  -->
       <div class="navbar__actions">
-        <!-- Selector de idioma -->
+
         <div class="lang-selector">
           <button class="lang-btn lang-btn--active" data-lang="en" aria-label="Switch to English">EN</button>
           <span class="lang-separator">|</span>
           <button class="lang-btn" data-lang="es" aria-label="Cambiar a Español">ES</button>
         </div>
 
-        <!-- Botón de reserva -->
+        <!-- Moved "Book Now" button here to be always visible -->
         <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
           class="golden-button navbar__cta" id="nav-whatsapp-btn" target="_blank" rel="noopener noreferrer"
           data-i18n="nav-book">
@@ -141,7 +142,7 @@
 
   <main>
 
-    <!-- Sección principal -->
+    <!--  HERO SECTION  -->
     <section class="hero" id="hero">
       <div class="hero__bg-overlay"></div>
       <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
@@ -158,7 +159,7 @@
           Every chair, a unique experience.
         </p>
 
-        <!-- Botón para reservar -->
+        <!--  BOOK APPOINTMENT BUTTON  -->
         <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
           class="golden-button" id="hero-whatsapp-btn" target="_blank" rel="noopener noreferrer">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
@@ -179,11 +180,11 @@
       </div>
       </div>
 
-      <!-- Línea decorativa -->
+      <!-- Decorative diagonal line -->
       <div class="hero__decorator" aria-hidden="true"></div>
     </section>
 
-    <!-- Sección de estadísticas -->
+    <!--  STATS / TRUST BAR  -->
     <section class="stats" id="stats" aria-label="Barbershop statistics">
       <div class="stats__container">
         <div class="stats__item" id="stat-years">
@@ -212,7 +213,7 @@
       </div>
     </section>
 
-    <!-- Servicios -->
+    <!--  SERVICES SECTION  -->
     <section class="services" id="services">
       <div class="services__container">
         <div class="services__header">
@@ -222,54 +223,41 @@
             best products and techniques.</p>
         </div>
 
-        <div class="services__grid" id="services-grid">
+        <div class="cards" id="services-grid">
 
-          <article class="service-card" id="service-fade">
-            <div class="content">
-              <h3 class="service-card__title" data-i18n="service-fade-title">Corte Fade</h3>
-              <p class="service-card__desc" data-i18n="service-fade-desc">Degradados precisos...</p>
-            </div>
+          <article class="card" id="service-fade">
+              <h3 class="card_title" data-i18n="service-fade-title">Corte Fade</h3>
+              <p class="card__desc" data-i18n="service-fade-desc">Degradados precisos...</p>
           </article>
 
 
-          <article class="service-card service-card--featured" id="service-classic">
-            <div class="content">
-              <div class="service-card__badge" data-i18n="service-classic-badge">Popular</div>
-              <h3 class="service-card__title" data-i18n="service-classic-title">Corte Clásico</h3>
-              <p class="service-card__desc" data-i18n="service-classic-desc">Tijera y máquina...</p>
-            </div>
+          <article class="card" id="service-classic">
+              <h3 class="card_title" data-i18n="service-classic-title">Corte Clásico</h3>
+              <p class="card__desc" data-i18n="service-classic-desc">Tijera y máquina...</p>
           </article>
 
 
-          <article class="service-card" id="service-beard">
-            <div class="content">
-              <h3 class="service-card__title" data-i18n="service-beard-title">Arreglo de Barba</h3>
-              <p class="service-card__desc" data-i18n="service-beard-desc">Perfilado y definición...</p>
-            </div>
+          <article class="card" id="service-beard">
+              <h3 class="card_title" data-i18n="service-beard-title">Arreglo de Barba</h3>
+              <p class="card__desc" data-i18n="service-beard-desc">Perfilado y definición...</p>
           </article>
 
 
-          <article class="service-card" id="service-shave">
-            <div class="content">
-              <h3 class="service-card__title" data-i18n="service-shave-title">Afeitado con Navaja</h3>
-              <p class="service-card__desc" data-i18n="service-shave-desc">Experiencia completa...</p>
-            </div>
+          <article class="card" id="service-shave">
+              <h3 class="card_title" data-i18n="service-shave-title">Afeitado con Navaja</h3>
+              <p class="card__desc" data-i18n="service-shave-desc">Experiencia completa...</p>
           </article>
 
 
-          <article class="service-card" id="service-combo">
-            <div class="content">
-              <h3 class="service-card__title" data-i18n="service-combo-title">Combo Completo</h3>
-              <p class="service-card__desc" data-i18n="service-combo-desc">Corte + barba...</p>
-            </div>
+          <article class="card" id="service-combo">
+              <h3 class="card_title" data-i18n="service-combo-title">Combo Completo</h3>
+              <p class="card__desc" data-i18n="service-combo-desc">Corte + barba...</p>
           </article>
 
 
-          <article class="service-card" id="service-kids">
-            <div class="content">
-              <h3 class="service-card__title" data-i18n="service-kids-title">Corte Infantil</h3>
-              <p class="service-card__desc" data-i18n="service-kids-desc">Paciencia y técnica...</p>
-            </div>
+          <article class="card" id="service-kids">
+              <h3 class="card_title" data-i18n="service-kids-title">Corte Infantil</h3>
+              <p class="card__desc" data-i18n="service-kids-desc">Paciencia y técnica...</p>
           </article>
 
 
@@ -285,7 +273,7 @@
       </div>
     </section>
 
-    <!-- Galería -->
+    <!--  GALLERY SECTION  -->
     <section class="gallery" id="gallery">
       <div class="gallery__container">
         <div class="gallery__header">
@@ -295,36 +283,36 @@
         </div>
 
         <div class="gallery__grid" id="gallery-grid">
-          <!-- Imágenes de galería -->
+
           <figure class="gallery__item gallery__item--large" id="gallery-item-1">
             <img src="assets/images/interior.png"
-              alt="Interior of Davinchi BarberShop" class="gallery__img"
+              alt="Interior of Davinchi BarberShop — placeholder, replace with real photo" class="gallery__img"
               loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-1">Our Space</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-2">
-            <img src="assets/images/fade-cut.png" alt="Professional fade cut"
+            <img src="assets/images/fade-cut.png" alt="Professional fade cut — placeholder, replace with real photo"
               class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-2">Perfect Fade</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-3">
-            <img src="assets/images/beard-shave.png" alt="Straight razor shave"
+            <img src="assets/images/beard-shave.png" alt="Straight razor shave — placeholder, replace with real photo"
               class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-3">Classic Shave</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-4">
-            <img src="assets/images/tools.png" alt="Premium barber tools"
+            <img src="assets/images/tools.png" alt="Premium barber tools — placeholder, replace with real photo"
               class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-4">Elite Tools</figcaption>
           </figure>
         </div>
 
         <div class="gallery__instagram-cta">
-          <a href="https://www.instagram.com/davinchi_barber_shop" class="instagram-simple-btn"
-            target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/davinchi_barber_shop" class="instagram-simple-btn" target="_blank"
+            rel="noopener noreferrer">
             <i class="fab fa-instagram"></i>
             <span>Síguenos en Instagram</span>
           </a>
@@ -332,7 +320,7 @@
       </div>
     </section>
 
-    <!-- Sobre nosotros -->
+    <!--  ABOUT SECTION  -->
     <section class="about" id="about">
       <div class="about__container">
         <div class="about__image-col">
@@ -341,7 +329,7 @@
               loading="lazy" />
             <div class="about__image-accent" aria-hidden="true"></div>
           </div>
-          <!-- Badge bilingüe -->
+
           <div class="about__badge" aria-hidden="true">
             <span class="about__badge-text">We<br />Speak<br />English</span>
           </div>
@@ -385,7 +373,7 @@
             View on Google Maps
           </a>
 
-          <!-- Mapa de ubicación -->
+          <!-- Mapa interactivo -->
           <div
             style="margin-top: 2rem; border-radius: var(--radius-md); overflow: hidden; height: 300px; border: 2px solid var(--color-gold);">
             <iframe
@@ -398,7 +386,7 @@
       </div>
     </section>
 
-    <!-- Sección de llamada a la acción -->
+    <!--  CTA SECTION  -->
     <section class="cta-section" id="contact">
       <div class="cta-section__overlay" aria-hidden="true"></div>
       <div class="cta-section__content">
@@ -406,16 +394,19 @@
         <h2 class="cta-section__title" data-i18n="cta-title">Your next level<br />starts <em>here</em></h2>
         <p class="cta-section__subtitle" data-i18n="cta-subtitle">Book now via WhatsApp and secure your chair.</p>
 
-        <!-- Botón para reservar -->
+        <!-- ★ BOOK APPOINTMENT BUTTON -->
         <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
           class="golden-button" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer">
           Book Appointment
         </a>
       </div>
     </section>
+
   </main>
 
-  <!-- Pie de página -->
+  <!-- 
+       FOOTER
+   -->
   <footer class="footer" id="footer" role="contentinfo">
     <div class="footer__container">
       <div class="footer__brand">

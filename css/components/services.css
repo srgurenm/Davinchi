@@ -44,144 +44,57 @@
 }
 
 /* ─── Service Cards Grid ─── */
-.services__grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-xl);
+  perspective: 500px;
+  justify-items: center;
 }
 
 /* ─── Individual Card ─── */
-.service-card {
-  width: 100%; /* Adapts to grid */
-  height: auto; /* Adjusts to content */
-  min-height: 250px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-xl);
-  position: relative;
-  overflow: hidden;
-  transition: all 300ms;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.service-card .content {
-  border-radius: 5px;
+.card {
   width: 100%;
-  height: 100%;
-  z-index: 1;
-  color: white;
+  max-width: 250px;
+  height: 250px;
+  background: #16161d;
+  border: 2px solid #555555;
+  border-radius: 4px;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .5s;
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.service-card .content::before {
-  opacity: 0;
-  transition: opacity 300ms;
-  content: " ";
-  display: block;
-  background: white;
-  width: 5px;
-  height: 50px;
-  position: absolute;
-  filter: blur(50px);
-  overflow: hidden;
+.card:hover {
+  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+  border-color: var(--color-gold);
 }
 
-.service-card:hover .content::before {
-  opacity: 1;
+.card_title {
+  color: #fff;
+  font: 700 1.2rem monospace;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  transition: transform .5s;
+  margin-bottom: var(--space-md);
 }
 
-.service-card::before {
-  opacity: 0;
-  content: " ";
-  position: absolute;
-  display: block;
-  width: 80px;
-  height: 360px;
-  /* Use Gold instead of pink/blue */
-  background: linear-gradient(var(--color-gold), var(--color-black));
-  transition: opacity 300ms;
-  animation: rotation_9018 8000ms infinite linear;
-  animation-play-state: paused;
+.card:hover .card_title {
+  transform: translateZ(50px);
 }
 
-.service-card:hover::before {
-  opacity: 1;
-  animation-play-state: running;
+.card__desc {
+  font-size: 0.8rem;
+  color: #ccc;
+  transition: transform .5s;
 }
 
-.service-card::after {
-  position: absolute;
-  content: " ";
-  display: block;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  background: var(--color-surface);
-  backdrop-filter: blur(50px);
-  border-radius: var(--radius-md);
-}
-
-@keyframes rotation_9018 {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Featured card variant */
-.service-card--featured {
-  background: linear-gradient(145deg, #1a1608 0%, var(--color-surface) 100%);
-  border-color: rgba(196, 155, 58, 0.2);
-}
-
-.service-card--featured::before {
-  opacity: 0.6;
-}
-
-/* ─── Badge ─── */
-.service-card__badge {
-  position: absolute;
-  top: var(--space-lg);
-  right: var(--space-lg);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-dark);
-  background: var(--color-gold);
-  padding: 0.2em 0.7em;
-  border-radius: var(--radius-full);
-}
-
-/* ─── Icon ─── */
-.service-card__icon {
-  font-size: 1.8rem;
-  line-height: 1;
-  margin-bottom: var(--space-lg);
-  display: block;
-}
-
-/* ─── Title ─── */
-.service-card__title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-sm);
-}
-
-/* ─── Description ─── */
-.service-card__desc {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  margin-bottom: var(--space-xl);
+.card:hover .card__desc {
+  transform: translateZ(30px);
 }
 
 
