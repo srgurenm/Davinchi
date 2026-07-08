@@ -122,6 +122,26 @@
   width: 100%;
 }
 
+/* ─── Nav Actions ─── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .navbar__actions {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar__actions {
+    gap: var(--space-xs);
+  }
+}
+
 /* ─── Nav CTA ─── */
 .navbar__cta {
   flex-shrink: 0;

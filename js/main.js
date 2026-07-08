@@ -1,28 +1,28 @@
 /**
  * main.js
- * Davinchi BarberShop — Application entry point
+ * Davinchi BarberShop — Punto de entrada de la aplicación
  *
- * Responsibilities:
- *  - Footer year
- *  - WhatsApp number configuration (update WHATSAPP_NUMBER)
- *  - Smooth scroll for anchor links
- *  - Gallery lightbox
+ * Responsabilidades:
+ *  - Año en el pie de página
+ *  - Configuración del número de WhatsApp (actualizar WHATSAPP_NUMBER)
+ *  - Desplazamiento suave para enlaces de anclaje
+ *  - Lightbox de galería
  */
 
 'use strict';
 
 /* ─────────────────────────────────────────────
-   CONFIGURATION — UPDATE THESE VALUES
+   CONFIGURACIÓN — ACTUALIZAR ESTOS VALORES
 ────────────────────────────────────────────── */
 const CONFIG = {
   /**
-   * WhatsApp number — full international format, digits only
-   * Example: '573001234567' (Colombia +57, then 10 digits)
+   * Número de WhatsApp — formato internacional completo, solo dígitos
+   * Ejemplo: '573001234567' (Colombia +57, luego 10 dígitos)
    */
   WHATSAPP_NUMBER: '573022903588',
 
   /**
-   * Default WhatsApp message (URL-encoded)
+   * Mensaje de WhatsApp por defecto (codificado en URL)
    */
   WHATSAPP_MESSAGE: encodeURIComponent(
     'Hola Davinchi BarberShop 💈 Me interesa reservar una cita. ¿Me pueden ayudar?'
@@ -30,7 +30,7 @@ const CONFIG = {
 };
 
 /* ─────────────────────────────────────────────
-   2. FOOTER YEAR
+   2. AÑO EN EL PIE DE PÁGINA
 ────────────────────────────────────────────── */
 function setFooterYear() {
   const yearEl = document.getElementById('footer-year');
@@ -38,7 +38,7 @@ function setFooterYear() {
 }
 
 /* ─────────────────────────────────────────────
-   3. SMOOTH SCROLL (enhanced for older browsers)
+   3. DESPLAZAMIENTO SUAVE
 ────────────────────────────────────────────── */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -60,14 +60,14 @@ function initSmoothScroll() {
 }
 
 /* ─────────────────────────────────────────────
-   4. GALLERY LIGHTBOX
-   Simple click-to-enlarge for gallery images
+   4. LIGHTBOX DE GALERÍA
+   Clic para ampliar imágenes de la galería
 ────────────────────────────────────────────── */
 function initGalleryLightbox() {
   const galleryItems = document.querySelectorAll('.gallery__item');
   if (!galleryItems.length) return;
 
-  // Create lightbox overlay
+  // Crear superposición del lightbox
   const overlay = document.createElement('div');
   overlay.id    = 'galleryLightbox';
   overlay.setAttribute('role', 'dialog');
@@ -123,7 +123,7 @@ function initGalleryLightbox() {
   overlay.appendChild(closeBtn);
   document.body.appendChild(overlay);
 
-  // Open lightbox
+  // Abrir lightbox
   function openLightbox(imgSrc, alt) {
     lightboxImg.src = imgSrc;
     lightboxImg.alt = alt;
@@ -137,7 +137,7 @@ function initGalleryLightbox() {
     });
   }
 
-  // Close lightbox
+  // Cerrar lightbox
   function closeLightbox() {
     overlay.style.opacity = '0';
     setTimeout(() => {
@@ -146,7 +146,7 @@ function initGalleryLightbox() {
     }, 300);
   }
 
-  // Event listeners
+  // Escuchadores de eventos
   galleryItems.forEach((item) => {
     item.addEventListener('click', () => {
       const img = item.querySelector('.gallery__img');
@@ -168,16 +168,16 @@ function initGalleryLightbox() {
 }
 
 /* ─────────────────────────────────────────────
-   INIT — DOMContentLoaded
+   INICIALIZACIÓN — DOMContentLoaded
 ────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   setFooterYear();
   initSmoothScroll();
   initGalleryLightbox();
 
-  // Log a welcome message for developers
+  // Registro de mensaje de bienvenida para desarrolladores
   console.log(
-    '%c💈 Davinchi BarberShop %c— Website loaded',
+    '%c💈 Davinchi BarberShop %c— Sitio web cargado',
     'color: #c49b3a; font-size: 14px; font-weight: bold;',
     'color: #9e9589; font-size: 12px;'
   );

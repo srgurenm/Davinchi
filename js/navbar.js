@@ -1,12 +1,12 @@
 /**
  * navbar.js
- * Davinchi BarberShop — Navbar behavior
+ * Davinchi BarberShop — Comportamiento de la barra de navegación
  *
- * Responsibilities:
- *  - Scrolled state (glass effect)
- *  - Mobile menu open/close
- *  - Active link highlighting on scroll
- *  - Mobile backdrop
+ * Responsabilidades:
+ *  - Estado de desplazamiento (efecto vidrio)
+ *  - Abrir/cerrar menú móvil
+ *  - Resaltado de enlace activo al desplazarse
+ *  - Fondo para menú móvil
  */
 
 'use strict';
@@ -26,7 +26,7 @@ const CLASSES = {
 };
 
 /* ─────────────────────────────────────────────
-   DOM References
+   Referencias del DOM
 ────────────────────────────────────────────── */
 const navbar   = document.querySelector(SELECTORS.navbar);
 const toggle   = document.querySelector(SELECTORS.toggle);
@@ -34,7 +34,7 @@ const menu     = document.querySelector(SELECTORS.menu);
 const navLinks = document.querySelectorAll(SELECTORS.navLinks);
 
 /* ─────────────────────────────────────────────
-   1. SCROLL — scrolled state
+   1. DESPLAZAMIENTO — estado al hacer scroll
 ────────────────────────────────────────────── */
 function onScroll() {
   const scrolled = window.scrollY > 60;
@@ -43,7 +43,7 @@ function onScroll() {
 }
 
 /* ─────────────────────────────────────────────
-   2. MOBILE MENU
+   2. MENÚ MÓVIL
 ────────────────────────────────────────────── */
 let backdrop = null;
 
@@ -78,18 +78,18 @@ function toggleMenu() {
   isOpen ? closeMenu() : openMenu();
 }
 
-/* Close menu when a nav link is clicked (mobile) */
+// Cerrar menú al hacer clic en un enlace de navegación (móvil)
 function onNavLinkClick(e) {
   const isMobile = window.innerWidth <= 900;
   if (isMobile) closeMenu();
 }
 
 /* ─────────────────────────────────────────────
-   3. ACTIVE LINK HIGHLIGHTING
+   3. RESALTADO DE ENLACE ACTIVO
 ────────────────────────────────────────────── */
 function highlightActiveSection() {
   const sections  = document.querySelectorAll(SELECTORS.sections);
-  const scrollPos = window.scrollY + 120; // offset for fixed navbar
+  const scrollPos = window.scrollY + 120; // desplazamiento compensatorio para la barra fija
 
   let currentSection = '';
 
@@ -109,7 +109,7 @@ function highlightActiveSection() {
 }
 
 /* ─────────────────────────────────────────────
-   4. KEYBOARD ACCESSIBILITY
+   4. ACCESIBILIDAD CON TECLADO
 ────────────────────────────────────────────── */
 function onKeyDown(e) {
   if (e.key === 'Escape' && menu.classList.contains(CLASSES.open)) {
@@ -119,7 +119,7 @@ function onKeyDown(e) {
 }
 
 /* ─────────────────────────────────────────────
-   5. RESIZE — close mobile menu if resized above breakpoint
+   5. REDIMENSIONAMIENTO — cerrar menú móvil si se redimensiona por encima del punto de interrupción
 ────────────────────────────────────────────── */
 function onResize() {
   if (window.innerWidth > 900 && menu.classList.contains(CLASSES.open)) {
@@ -128,12 +128,12 @@ function onResize() {
 }
 
 /* ─────────────────────────────────────────────
-   INIT
+   INICIALIZACIÓN
 ────────────────────────────────────────────── */
 function initNavbar() {
   if (!navbar || !toggle || !menu) return;
 
-  // Throttled scroll
+  // Scroll con limitación de velocidad
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -155,7 +155,7 @@ function initNavbar() {
 
   window.addEventListener('resize', onResize);
 
-  // Initial state
+  // Estado inicial
   onScroll();
 }
 

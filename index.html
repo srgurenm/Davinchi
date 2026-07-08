@@ -8,21 +8,21 @@
     content="Davinchi BarberShop — Barbería élite en Medellín. Cortes de cabello, diseño de barba y estilo clásico con toque contemporáneo. ¡Reserva tu cita por WhatsApp! We speak English." />
   <meta name="keywords" content="barberia medellin, barber shop medellin, barberia el poblado, best barber shop medellin, corte de cabello medellin, davinchi barber shop, barberia bilingue medellin, fade cut medellin, barberia laureles, arreglar barba medellin" />
   
-  <!-- Open Graph / Facebook -->
+  <!-- Etiquetas para compartir en redes -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://davinchibarbershop.com/" />
   <meta property="og:title" content="Davinchi BarberShop — La Mejor Barbería en Medellín" />
   <meta property="og:description" content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
   <meta property="og:image" content="https://davinchibarbershop.com/assets/images/interior.png" />
 
-  <!-- Twitter -->
+  <!-- Etiquetas para Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://davinchibarbershop.com/" />
   <meta property="twitter:title" content="Davinchi BarberShop — La Mejor Barbería en Medellín" />
   <meta property="twitter:description" content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
   <meta property="twitter:image" content="https://davinchibarbershop.com/assets/images/interior.png" />
 
-  <!-- Local Business Structured Data JSON-LD -->
+  <!-- SEO: Datos del negocio para Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,19 +68,19 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
   <title>Davinchi BarberShop — La Mejor Barbería en Medellín</title>
 
-  <!-- Google Fonts -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap"
     rel="stylesheet" />
 
-  <!-- Font Awesome -->
+  <!-- Iconos -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- CSS -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/components/navbar.css" />
   <link rel="stylesheet" href="css/components/hero.css" />
@@ -95,9 +95,7 @@
 
 <body>
 
-  <!-- ========================
-       NAVBAR
-  ========================= -->
+  <!-- Barra de navegación -->
   <header class="navbar" id="navbar">
     <div class="navbar__container">
       <a href="#hero" class="navbar__logo" id="nav-logo">
@@ -105,12 +103,22 @@
         <span class="navbar__logo-sub">BARBER SHOP</span>
       </a>
 
-      <!-- Moved "Book Now" button here to be always visible -->
-      <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
-        class="golden-button navbar__cta" id="nav-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-        data-i18n="nav-book">
-        Book Now
-      </a>
+      <!-- Acciones: Idioma y reserva -->
+      <div class="navbar__actions">
+        <!-- Selector de idioma -->
+        <div class="lang-selector">
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="Switch to English">EN</button>
+          <span class="lang-separator">|</span>
+          <button class="lang-btn" data-lang="es" aria-label="Cambiar a Español">ES</button>
+        </div>
+
+        <!-- Botón de reserva -->
+        <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
+          class="golden-button navbar__cta" id="nav-whatsapp-btn" target="_blank" rel="noopener noreferrer"
+          data-i18n="nav-book">
+          Book Now
+        </a>
+      </div>
 
       <button class="navbar__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span class="navbar__toggle-bar"></span>
@@ -126,13 +134,6 @@
           <li><a href="#about" class="navbar__link" id="nav-link-about" data-i18n="nav-about">About Us</a></li>
           <li><a href="#contact" class="navbar__link" id="nav-link-contact" data-i18n="nav-contact">Contact</a></li>
         </ul>
-
-        <!-- Always Visible Language Toggle -->
-        <div class="lang-selector">
-          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="Switch to English">EN</button>
-          <span class="lang-separator">|</span>
-          <button class="lang-btn" data-lang="es" aria-label="Cambiar a Español">ES</button>
-        </div>
       </nav>
 
     </div>
@@ -140,9 +141,7 @@
 
   <main>
 
-    <!-- ========================
-         HERO SECTION
-    ========================= -->
+    <!-- Sección principal -->
     <section class="hero" id="hero">
       <div class="hero__bg-overlay"></div>
       <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
@@ -159,7 +158,7 @@
           Every chair, a unique experience.
         </p>
 
-        <!-- ★ BOOK APPOINTMENT BUTTON (Using the consistent golden-button class) -->
+        <!-- Botón para reservar -->
         <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
           class="golden-button" id="hero-whatsapp-btn" target="_blank" rel="noopener noreferrer">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
@@ -180,13 +179,11 @@
       </div>
       </div>
 
-      <!-- Decorative diagonal line -->
+      <!-- Línea decorativa -->
       <div class="hero__decorator" aria-hidden="true"></div>
     </section>
 
-    <!-- ========================
-         STATS / TRUST BAR
-    ========================= -->
+    <!-- Sección de estadísticas -->
     <section class="stats" id="stats" aria-label="Barbershop statistics">
       <div class="stats__container">
         <div class="stats__item" id="stat-years">
@@ -215,9 +212,7 @@
       </div>
     </section>
 
-    <!-- ========================
-         SERVICES SECTION
-    ========================= -->
+    <!-- Servicios -->
     <section class="services" id="services">
       <div class="services__container">
         <div class="services__header">
@@ -290,9 +285,7 @@
       </div>
     </section>
 
-    <!-- ========================
-         GALLERY SECTION
-    ========================= -->
+    <!-- Galería -->
     <section class="gallery" id="gallery">
       <div class="gallery__container">
         <div class="gallery__header">
@@ -302,28 +295,28 @@
         </div>
 
         <div class="gallery__grid" id="gallery-grid">
-          <!-- PLACEHOLDER IMAGES — Replace src with real photos -->
+          <!-- Imágenes de galería -->
           <figure class="gallery__item gallery__item--large" id="gallery-item-1">
             <img src="assets/images/interior.png"
-              alt="Interior of Davinchi BarberShop — placeholder, replace with real photo" class="gallery__img"
+              alt="Interior of Davinchi BarberShop" class="gallery__img"
               loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-1">Our Space</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-2">
-            <img src="assets/images/fade-cut.png" alt="Professional fade cut — placeholder, replace with real photo"
+            <img src="assets/images/fade-cut.png" alt="Professional fade cut"
               class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-2">Perfect Fade</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-3">
-            <img src="assets/images/beard-shave.png" alt="Straight razor shave — placeholder, replace with real photo"
+            <img src="assets/images/beard-shave.png" alt="Straight razor shave"
               class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-3">Classic Shave</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-4">
-            <img src="assets/images/tools.png" alt="Premium barber tools — placeholder, replace with real photo"
+            <img src="assets/images/tools.png" alt="Premium barber tools"
               class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-4">Elite Tools</figcaption>
           </figure>
@@ -339,9 +332,7 @@
       </div>
     </section>
 
-    <!-- ========================
-         ABOUT SECTION
-    ========================= -->
+    <!-- Sobre nosotros -->
     <section class="about" id="about">
       <div class="about__container">
         <div class="about__image-col">
@@ -350,7 +341,7 @@
               loading="lazy" />
             <div class="about__image-accent" aria-hidden="true"></div>
           </div>
-          <!-- Gold badge -->
+          <!-- Badge bilingüe -->
           <div class="about__badge" aria-hidden="true">
             <span class="about__badge-text">We<br />Speak<br />English</span>
           </div>
@@ -394,7 +385,7 @@
             View on Google Maps
           </a>
 
-          <!-- Mapa interactivo -->
+          <!-- Mapa de ubicación -->
           <div
             style="margin-top: 2rem; border-radius: var(--radius-md); overflow: hidden; height: 300px; border: 2px solid var(--color-gold);">
             <iframe
@@ -407,9 +398,7 @@
       </div>
     </section>
 
-    <!-- ========================
-         CTA SECTION
-    ========================= -->
+    <!-- Sección de llamada a la acción -->
     <section class="cta-section" id="contact">
       <div class="cta-section__overlay" aria-hidden="true"></div>
       <div class="cta-section__content">
@@ -417,19 +406,16 @@
         <h2 class="cta-section__title" data-i18n="cta-title">Your next level<br />starts <em>here</em></h2>
         <p class="cta-section__subtitle" data-i18n="cta-subtitle">Book now via WhatsApp and secure your chair.</p>
 
-        <!-- ★ BOOK APPOINTMENT BUTTON -->
+        <!-- Botón para reservar -->
         <a href="https://wa.me/573022903588?text=Hola%20Davinchi%20BarberShop%2C%20estoy%20interesado%20en%20una%20cita"
           class="golden-button" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer">
           Book Appointment
         </a>
       </div>
     </section>
-
   </main>
 
-  <!-- ========================
-       FOOTER
-  ========================= -->
+  <!-- Pie de página -->
   <footer class="footer" id="footer" role="contentinfo">
     <div class="footer__container">
       <div class="footer__brand">

@@ -1,17 +1,17 @@
 /**
  * animations.js
- * Davinchi BarberShop — Animation utilities
+ * Davinchi BarberShop — Utilidades de animación
  *
- * Responsibilities:
- *  - Scroll-triggered reveal animations (IntersectionObserver)
- *  - Animated stat counters
- *  - Hero particle system
+ * Responsabilidades:
+ *  - Animaciones de revelado al desplazarse (IntersectionObserver)
+ *  - Contadores animados de estadísticas
+ *  - Sistema de partículas para el Hero
  */
 
 'use strict';
 
 /* ─────────────────────────────────────────────
-   1. SCROLL REVEAL — IntersectionObserver
+   1. REVELADO AL HACER SCROLL — IntersectionObserver
 ────────────────────────────────────────────── */
 function initScrollReveal() {
   const targets = document.querySelectorAll('[data-animate]');
@@ -22,7 +22,7 @@ function initScrollReveal() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target); // Fire once only
+          observer.unobserve(entry.target); // Ejecutar solo una vez
         }
       });
     },
@@ -33,7 +33,7 @@ function initScrollReveal() {
 }
 
 /* ─────────────────────────────────────────────
-   2. ANIMATED COUNTERS
+   2. CONTADORES ANIMADOS
 ────────────────────────────────────────────── */
 function animateCounter(el, target, duration = 1800) {
   const start    = performance.now();
@@ -42,7 +42,7 @@ function animateCounter(el, target, duration = 1800) {
   function update(currentTime) {
     const elapsed  = currentTime - start;
     const progress = Math.min(elapsed / duration, 1);
-    // Ease-out cubic
+    // easing cubic-out
     const eased    = 1 - Math.pow(1 - progress, 3);
     const current  = Math.round(startVal + (target - startVal) * eased);
 
@@ -78,13 +78,13 @@ function initCounters() {
 }
 
 /* ─────────────────────────────────────────────
-   3. HERO PARTICLE SYSTEM
+   3. SISTEMA DE PARTÍCULAS DEL HERO
 ────────────────────────────────────────────── */
 function initHeroParticles() {
   const container = document.getElementById('heroParticles');
   if (!container) return;
 
-  // Respect user's motion preference
+  // Respetar la preferencia de movimiento reducida del usuario
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
 
@@ -96,10 +96,10 @@ function initHeroParticles() {
     el.classList.add('hero__particle');
 
     const size   = Math.random() * 3 + 1;          // 1–4px
-    const x      = Math.random() * 100;             // % from left
-    const delay  = Math.random() * 8;               // 0–8s delay
-    const dur    = Math.random() * 12 + 8;          // 8–20s duration
-    const blur   = Math.random() < 0.3 ? 1 : 0;    // 30% have blur
+    const x      = Math.random() * 100;             // % desde la izquierda
+    const delay  = Math.random() * 8;               // 0–8s de retraso
+    const dur    = Math.random() * 12 + 8;          // 8–20s de duración
+    const blur   = Math.random() < 0.3 ? 1 : 0;    // 30% tienen desenfoque
 
     el.style.cssText = `
       width:  ${size}px;
@@ -122,8 +122,8 @@ function initHeroParticles() {
 }
 
 /* ─────────────────────────────────────────────
-   4. APPLY data-animate ATTRIBUTES
-   (Add programmatically so HTML stays clean)
+   4. APLICAR ATRIBUTOS data-animate
+   (Agregar programáticamente para mantener el HTML limpio)
 ────────────────────────────────────────────── */
 function applyAnimationAttributes() {
   const animatable = [
@@ -148,7 +148,7 @@ function applyAnimationAttributes() {
       if (delay !== null) {
         el.setAttribute('data-animate-delay', delay);
       } else {
-        // Stagger delay for lists
+        // Retraso escalonado para listas
         const d = Math.min(idx * 100, 500);
         el.setAttribute('data-animate-delay', d.toString());
       }
@@ -157,7 +157,7 @@ function applyAnimationAttributes() {
 }
 
 /* ─────────────────────────────────────────────
-   INIT
+   INICIALIZACIÓN
 ────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   applyAnimationAttributes();
