@@ -8,19 +8,19 @@
 ─────────────────────────────────────────── */
 :root {
   /* Color palette — Blackberry Black & Aged Gold */
-  --color-black:       #1a1a1c;
+  --color-black:       #0f0f0f;
   --color-dark:        #222024;
   --color-dark-alt:    #28262a;
   --color-surface:     #2c2a2e;
   --color-surface-alt: #353238;
   --color-border:      rgba(255, 255, 255, 0.06);
-  --color-border-gold: rgba(166, 124, 0, 0.3);
+  --color-border-gold: rgba(176, 141, 87, 0.3);
 
   /* Gold accent palette — Aged, non-neon */
-  --color-gold:        #a67c00;
+  --color-gold:        #b08d57;
   --color-gold-light:  #b8860b;
   --color-gold-pale:   #d4af37;
-  --color-gold-muted:  rgba(166, 124, 0, 0.12);
+  --color-gold-muted:  rgba(176, 141, 87, 0.12);
 
   /* Cream / off-white */
   --color-cream:       #f5f0e8;
