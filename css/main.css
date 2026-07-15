@@ -32,7 +32,7 @@
   --color-text-muted:     #6b6560;
 
   /* Typography scale */
-  --font-display:  'Playfair Display', Georgia, serif;
+  --font-display:  'Cormorant Garamond', Georgia, serif;
   --font-sans:     'Inter', system-ui, sans-serif;
   --font-headline: 'Bebas Neue', 'Impact', sans-serif;
 
@@ -442,7 +442,7 @@ address {
 [data-animate-delay="500"] { transition-delay: 0.5s; }
 
 /* ───────────────────────────────────────────
-   8. RESPONSIVE BREAKPOINTS
+   8. RESPONSIVE BREAKPOINTS (Mobile Spacing)
 ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .about__container {
@@ -465,8 +465,22 @@ address {
 }
 
 @media (max-width: 600px) {
+  body {
+    line-height: 1.8; /* Aumentar interlineado en móvil */
+  }
+
+  section {
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .section-title {
+    margin-bottom: var(--space-2xl);
+  }
+
   .stats__item {
-    flex: 0 0 50%;
+    flex: 0 0 100%; /* Apilar stats en móvil */
+    padding: var(--space-md);
   }
 
   .about__badge {
