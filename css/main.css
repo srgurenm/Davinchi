@@ -3,90 +3,90 @@
    Davinchi BarberShop
    ============================================================ */
 
-/* ───────────────────────────────────────────
-   1. DESIGN TOKENS (Custom Properties)
-─────────────────────────────────────────── */
+
 :root {
   /* Color palette — Blackberry Black & Aged Gold */
-  --color-black:       #2c2c2c;
-  --color-dark:        #222024;
-  --color-dark-alt:    #28262a;
-  --color-surface:     #2c2a2e;
+  --color-black: #2c2c2c;
+  --color-dark: #222024;
+  --color-dark-alt: #28262a;
+  --color-surface: #2c2a2e;
   --color-surface-alt: #353238;
-  --color-border:      rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.06);
   --color-border-gold: rgba(176, 141, 87, 0.3);
 
   /* Gold accent palette — Aged, non-neon */
-  --color-gold:        #b08d57;
-  --color-gold-light:  #b8860b;
-  --color-gold-pale:   #d4af37;
-  --color-gold-muted:  rgba(176, 141, 87, 0.12);
+  --color-gold: #b08d57;
+  --color-gold-light: #b8860b;
+  --color-gold-pale: #d4af37;
+  --color-gold-muted: rgba(176, 141, 87, 0.12);
 
   /* Cream / off-white */
-  --color-cream:       #f5f0e8;
+  --color-cream: #f5f0e8;
   --color-cream-muted: #c8bfa8;
 
   /* Text hierarchy */
-  --color-text-primary:   #f0ece4;
+  --color-text-primary: #f0ece4;
   --color-text-secondary: #9e9589;
-  --color-text-muted:     #6b6560;
+  --color-text-muted: #6b6560;
 
   /* Typography scale */
-  --font-display:  'Cormorant Garamond', Georgia, serif;
-  --font-sans:     'Inter', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
   --font-headline: 'Bebas Neue', 'Impact', sans-serif;
 
-  /* Typography tokens (Centralized for easy modification) */
-  --lh-base:     1.8;
-  --lh-heading:  1.3;
-  --ls-base:     0.1em;
-  --ls-heading:  0.25em;
+  /* Typography tokens  */
+  --lh-base: 1.8;
+  --lh-heading: 1.3;
+  --ls-base: 0.1em;
+  --ls-heading: 0.25em;
 
   /* Spacing scale */
-  --space-xs:  0.3rem;
-  --space-sm:  0.6rem;
-  --space-md:  1.25rem;
-  --space-lg:  2rem;
-  --space-xl:  2.5rem;
-  --space-2xl: 3.5rem;
-  --space-3xl: 4.5rem;
-  --space-4xl: 7rem;
-  --space-5xl: 9rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
 
   /* Layout */
-  --max-width:    1200px;
+  --max-width: 1200px;
   --max-width-sm: 800px;
-  --gutter:       clamp(1rem, 4vw, 2rem);
+  --gutter: clamp(1rem, 4vw, 2rem);
 
   /* Borders */
-  --radius-sm:  4px;
-  --radius-md:  8px;
-  --radius-lg:  16px;
-  --radius-xl:  24px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm:   0 1px 3px rgba(0,0,0,0.4);
-  --shadow-md:   0 4px 16px rgba(0,0,0,0.5);
-  --shadow-lg:   0 8px 40px rgba(0,0,0,0.6);
-  --shadow-gold: 0 0 20px rgba(196,155,58,0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 0 20px rgba(196, 155, 58, 0.15);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
-  --transition-std:  0.3s ease;
+  --transition-std: 0.3s ease;
   --transition-slow: 0.6s ease;
 
   /* Z-index layers */
-  --z-base:    1;
+  --z-base: 1;
   --z-overlay: 10;
-  --z-nav:     100;
-  --z-modal:   200;
+  --z-nav: 100;
+  --z-modal: 200;
 }
 
 /* ───────────────────────────────────────────
    2. CSS RESET & BASE
 ─────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -121,7 +121,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -192,7 +193,7 @@ address {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border-gold);
   border-bottom: 1px solid var(--color-border-gold);
-  padding: var(--space-3xl) var(--gutter);
+  padding: var(--space-30x1) var(--gutter);
 }
 
 .stats__container {
@@ -376,7 +377,7 @@ address {
 .cta-section__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(196,155,58,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(196, 155, 58, 0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -436,11 +437,25 @@ address {
   transform: translateY(0);
 }
 
-[data-animate-delay="100"] { transition-delay: 0.1s; }
-[data-animate-delay="200"] { transition-delay: 0.2s; }
-[data-animate-delay="300"] { transition-delay: 0.3s; }
-[data-animate-delay="400"] { transition-delay: 0.4s; }
-[data-animate-delay="500"] { transition-delay: 0.5s; }
+[data-animate-delay="100"] {
+  transition-delay: 0.1s;
+}
+
+[data-animate-delay="200"] {
+  transition-delay: 0.2s;
+}
+
+[data-animate-delay="300"] {
+  transition-delay: 0.3s;
+}
+
+[data-animate-delay="400"] {
+  transition-delay: 0.4s;
+}
+
+[data-animate-delay="500"] {
+  transition-delay: 0.5s;
+}
 
 /* ───────────────────────────────────────────
    8. RESPONSIVE BREAKPOINTS (Mobile Spacing)
@@ -467,7 +482,7 @@ address {
 
 @media (max-width: 600px) {
   body {
-    line-height: 1.8; /* Aumentar interlineado en móvil */
+    line-height: 2.8;
   }
 
   section {
@@ -480,7 +495,8 @@ address {
   }
 
   .stats__item {
-    flex: 0 0 100%; /* Apilar stats en móvil */
+    flex: 0 0 100%;
+    /* Apilar stats en móvil */
     padding: var(--space-md);
   }
 
