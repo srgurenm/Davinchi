@@ -237,6 +237,8 @@
 
   .hero__title {
     max-width: 100%;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
   }
 
   .hero__cta-group {
