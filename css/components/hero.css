@@ -12,13 +12,11 @@
   background-color: var(--color-black);
   /* Subtle diagonal stripe pattern — unique, non-generic touch */
   background-image:
-    repeating-linear-gradient(
-      -45deg,
+    repeating-linear-gradient(-45deg,
       transparent,
       transparent 80px,
       rgba(196, 155, 58, 0.012) 80px,
-      rgba(196, 155, 58, 0.012) 81px
-    );
+      rgba(196, 155, 58, 0.012) 81px);
 }
 
 /* ─── Background overlay ─── */
@@ -28,7 +26,7 @@
   background:
     radial-gradient(ellipse 80% 80% at 70% 50%, rgba(196, 155, 58, 0.06) 0%, transparent 60%),
     radial-gradient(ellipse 50% 70% at 10% 90%, rgba(196, 155, 58, 0.04) 0%, transparent 50%),
-    linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(10,10,10,0.7) 100%);
+    linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 0.7) 100%);
   z-index: 1;
 }
 
@@ -53,10 +51,23 @@
 }
 
 @keyframes particleFloat {
-  0%   { opacity: 0;   transform: translateY(0) scale(1); }
-  10%  { opacity: 0.6; }
-  90%  { opacity: 0.3; }
-  100% { opacity: 0;   transform: translateY(-120vh) scale(0.3); }
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-120vh) scale(0.3);
+  }
 }
 
 /* ─── Content ─── */
@@ -76,7 +87,7 @@
   letter-spacing: var(--ls-heading);
   text-transform: uppercase;
   color: var(--color-gold);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
   opacity: 0;
   animation: fadeSlideUp 0.8s ease 0.3s forwards;
 }
@@ -90,21 +101,6 @@
   letter-spacing: 0.01em;
   color: var(--color-cream);
   margin-bottom: var(--space-2xl);
-  max-width: 14ch;
-
-  opacity: 0;
-  animation: fadeSlideUp 0.9s ease 0.5s forwards;
-}
-
-/* ─── Main title ─── */
-.hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--color-cream);
-  margin-bottom: var(--space-xl);
   max-width: 14ch;
 
   opacity: 0;
@@ -171,8 +167,17 @@
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50%       { opacity: 1;   transform: scaleY(1.1); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
 }
 
 .hero__scroll-text {
@@ -190,13 +195,11 @@
   top: 0;
   bottom: 0;
   width: 45%;
-  background: linear-gradient(
-    160deg,
-    transparent 0%,
-    rgba(196,155,58,0.02) 40%,
-    rgba(196,155,58,0.05) 60%,
-    transparent 100%
-  );
+  background: linear-gradient(160deg,
+      transparent 0%,
+      rgba(196, 155, 58, 0.02) 40%,
+      rgba(196, 155, 58, 0.05) 60%,
+      transparent 100%);
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
   z-index: 2;
   pointer-events: none;
@@ -204,13 +207,25 @@
 
 /* ─── Entrance animations ─── */
 @keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* ─── Responsive ─── */
