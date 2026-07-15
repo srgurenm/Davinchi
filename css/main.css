@@ -36,6 +36,12 @@
   --font-sans:     'Inter', system-ui, sans-serif;
   --font-headline: 'Bebas Neue', 'Impact', sans-serif;
 
+  /* Typography tokens (Centralized for easy modification) */
+  --lh-base:     1.6;
+  --lh-heading:  1.15;
+  --ls-base:     0.05em;
+  --ls-heading:  0.2em;
+
   /* Spacing scale */
   --space-xs:  0.25rem;
   --space-sm:  0.5rem;
@@ -97,7 +103,7 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: var(--lh-base);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -130,7 +136,7 @@ address {
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--ls-heading);
   text-transform: uppercase;
   color: var(--color-gold);
   margin-bottom: var(--space-md);
@@ -161,7 +167,7 @@ address {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: var(--lh-heading);
   color: var(--color-text-primary);
   margin-bottom: var(--space-lg);
 }
