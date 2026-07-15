@@ -37,10 +37,10 @@
   --font-headline: 'Bebas Neue', 'Impact', sans-serif;
 
   /* Typography tokens (Centralized for easy modification) */
-  --lh-base:     1.6;
-  --lh-heading:  1.15;
-  --ls-base:     0.05em;
-  --ls-heading:  0.2em;
+  --lh-base:     1.8;
+  --lh-heading:  1.3;
+  --ls-base:     0.1em;
+  --ls-heading:  0.25em;
 
   /* Spacing scale */
   --space-xs:  0.25rem;
@@ -104,6 +104,7 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
   line-height: var(--lh-base);
+  letter-spacing: var(--ls-base);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

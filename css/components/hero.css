@@ -73,12 +73,27 @@
 .hero__tagline {
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: var(--ls-heading);
   text-transform: uppercase;
   color: var(--color-gold);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-2xl);
   opacity: 0;
   animation: fadeSlideUp 0.8s ease 0.3s forwards;
+}
+
+/* ─── Main title ─── */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: var(--lh-heading);
+  letter-spacing: 0.01em;
+  color: var(--color-cream);
+  margin-bottom: var(--space-2xl);
+  max-width: 14ch;
+
+  opacity: 0;
+  animation: fadeSlideUp 0.9s ease 0.5s forwards;
 }
 
 /* ─── Main title ─── */
