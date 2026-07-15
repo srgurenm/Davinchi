@@ -16,7 +16,7 @@
 
 /* Scrolled state — added by JS */
 .navbar.is-scrolled {
-  background: rgba(10, 10, 10, 0.96);
+  background: rgba(44, 44, 44, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 0.8rem var(--gutter);
@@ -227,7 +227,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(44, 44, 44, 0.6);
     z-index: calc(var(--z-nav) - 1);
   }
 
