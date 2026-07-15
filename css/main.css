@@ -193,7 +193,7 @@ address {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border-gold);
   border-bottom: 1px solid var(--color-border-gold);
-  padding: var(--space-30x1) var(--gutter);
+  padding: var(--space-3x1) var(--gutter);
 }
 
 .stats__container {
