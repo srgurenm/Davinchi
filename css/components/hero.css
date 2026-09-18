@@ -10,7 +10,7 @@
   align-items: center;
   overflow: hidden;
   background-color: var(--color-black);
-  /* Subtle diagonal stripe pattern — unique, non-generic touch */
+  /* Subtle diagonal stripe pattern — unique */
   background-image:
     repeating-linear-gradient(-45deg,
       transparent,
