@@ -140,6 +140,21 @@
 .services__cta {
   text-align: center;
   margin-top: var(--space-4xl);
+  padding: 0 var(--gutter);
+}
+
+#services-whatsapp-btn {
+  max-width: 100%;
+  width: auto;
+  min-height: 2.8em;
+  height: auto;
+  padding: 0.75em 1.6em;
+  font-size: clamp(0.78rem, 2.5vw, 0.95rem);
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
+  word-break: normal;
+  display: inline-flex;
 }
 
 /* ─── Responsive ─── */
@@ -152,5 +167,18 @@
 @media (max-width: 580px) {
   .services__grid {
     grid-template-columns: 1fr;
+  }
+
+  .services__cta {
+    margin-top: var(--space-2xl);
+    padding: 0 0.5rem;
+  }
+
+  #services-whatsapp-btn {
+    width: 100%;
+    max-width: 330px;
+    font-size: 0.78rem;
+    padding: 0.75em 1rem;
+    letter-spacing: 0.04em;
   }
 }
