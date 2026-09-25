@@ -179,7 +179,7 @@
   }
 
   function formatPrice(n) {
-    return '$ ' + n.toLocaleString('es-CO');
+    return '$ ' + n.toLocaleString('es-CO') + ' COP';
   }
 
   /* ─────────────────────────────────────────

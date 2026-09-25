@@ -1630,8 +1630,9 @@
   }
 
   .product-card__price {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     padding-top: 2px;
+    white-space: nowrap;
   }
 
   .product-card__price-label {
