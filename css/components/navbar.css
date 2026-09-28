@@ -211,7 +211,7 @@
   width: 24px;
   height: 2px;
   background: var(--color-text-primary);
-  border-radius: var(--radius-full);
+  border-radius: 0;
   transition: transform var(--transition-std), opacity var(--transition-std),
               background var(--transition-fast);
 }

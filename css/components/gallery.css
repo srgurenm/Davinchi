@@ -36,7 +36,7 @@
 .gallery__item {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid var(--color-border);
   aspect-ratio: 1 / 1;
   margin: 0;

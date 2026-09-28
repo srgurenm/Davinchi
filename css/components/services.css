@@ -81,7 +81,7 @@
   top: 0;
   right: 0;
   background: linear-gradient(135deg, var(--color-gold), #8c6e26);
-  border-radius: 0 4px 0 32px;
+  border-radius: 0;
 }
 
 .go-arrow {
@@ -99,7 +99,7 @@
   min-height: 220px;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: 0;
   padding: 2em 1.2em;
   margin: 12px;
   text-decoration: none;
@@ -117,7 +117,7 @@
   background: var(--color-gold);
   height: 32px;
   width: 32px;
-  border-radius: 32px;
+  border-radius: 0;
   transform: scale(1);
   transform-origin: 50% 50%;
   transition: transform 0.35s ease-out;
