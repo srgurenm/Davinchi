@@ -41,7 +41,7 @@
     gap: 0.1rem;
   }
   .navbar__logo-d {
-    font-size: 1.35rem;
+    font-size: inherit;
   }
   .navbar__logo-sub {
     font-size: 0.36rem;
@@ -59,13 +59,13 @@
 .navbar__logo {
   font-family: var(--font-headline);
   font-size: 1.4rem;
-  letter-spacing: 0.15em;
   color: var(--color-text-primary);
   display: flex;
-  align-items: baseline;
-  gap: 0.2rem;
+  align-items: flex-start;
+  gap: 0.15rem;
   flex-direction: column;
   line-height: 1;
+  text-decoration: none;
   transition: opacity var(--transition-fast);
 }
 
@@ -73,19 +73,26 @@
   opacity: 0.85;
 }
 
+.navbar__logo-main {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
 .navbar__logo-d {
   color: var(--color-gold);
-  font-size: 1.6rem;
+  font-size: inherit;
 }
 
 .navbar__logo-sub {
   font-family: var(--font-sans);
-  font-size: 0.45rem;
+  font-size: 0.44rem;
   font-weight: 600;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  margin-top: 0.1rem;
+  color: var(--color-gold);
+  margin-top: 0.15rem;
 }
 
 /* ─── Navigation links ─── */
