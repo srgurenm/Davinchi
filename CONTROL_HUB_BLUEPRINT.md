@@ -88,6 +88,7 @@ Para mantener la misma identidad de marca de la página principal, el nuevo proy
 Estos son los **23 productos reales** extraídos de la tienda Davinchi con sus códigos, tamaños y precios sugeridos de venta (COP):
 
 ### 🛁 Línea Care (Cuidado)
+
 | Código | Producto | Presentación | Precio Venta (COP) | Stock Mínimo Sugerido |
 | :--- | :--- | :--- | :--- | :--- |
 | `care-1` | All-in-One Shampoo | 300 ml | $84.990 | 3 |
@@ -99,6 +100,7 @@ Estos son los **23 productos reales** extraídos de la tienda Davinchi con sus c
 | `care-7` | Serum | 150 ml | $94.990 | 2 |
 
 ### ✂️ Colección Julius Cvesar
+
 | Código | Producto | Presentación | Precio Venta (COP) | Stock Mínimo Sugerido |
 | :--- | :--- | :--- | :--- | :--- |
 | `jul-1` | HairSpray | 200 ml | $78.990 | 2 |
@@ -107,6 +109,7 @@ Estos son los **23 productos reales** extraídos de la tienda Davinchi con sus c
 | `jul-4` | Curl Cream | 150 ml | $94.990 | 2 |
 
 ### 🧭 Colección Nomad Barber
+
 | Código | Producto | Presentación | Precio Venta (COP) | Stock Mínimo Sugerido |
 | :--- | :--- | :--- | :--- | :--- |
 | `nom-1` | Grooming Spray | 200 ml | $78.990 | 3 |
@@ -115,6 +118,7 @@ Estos son los **23 productos reales** extraídos de la tienda Davinchi con sus c
 | `nom-4` | Gel | 150 ml | $94.990 | 2 |
 
 ### 👑 Colección Staygold
+
 | Código | Producto | Presentación | Precio Venta (COP) | Stock Mínimo Sugerido |
 | :--- | :--- | :--- | :--- | :--- |
 | `sg-1` | Fiber Pomade | 100 ml | $105.990 | 3 |
@@ -123,6 +127,7 @@ Estos son los **23 productos reales** extraídos de la tienda Davinchi con sus c
 | `sg-4` | Definition Spray | 200 ml | $78.990 | 2 |
 
 ### 🧴 Lavacabezas (Backwash / Uso Profesional & Salón)
+
 | Código | Producto | Presentación | Precio Venta / Uso | Stock Mínimo Sugerido |
 | :--- | :--- | :--- | :--- | :--- |
 | `bw-1` | All-in-One Shampoo (Salón) | 750 ml | Precio Profesional | 1 |
@@ -139,7 +144,7 @@ Servicios ofrecidos en Davinchi BarberShop para el módulo de registro de cortes
 | Código | Servicio | Descripción | Precio Sugerido (COP) | Comisión Sugerida (%) |
 | :--- | :--- | :--- | :--- | :--- |
 | `srv-fade` | Fade Cut | Cortes degradados de alta precisión con acabado profesional pulido. | $40.000 | 50% |
-| `srv-classic`| Classic Cut | Tijera y máquina en armonía. Estilo clásico reinventado. | $35.000 | 50% |
+| `srv-classic` | Classic Cut | Tijera y máquina en armonía. Estilo clásico reinventado. | $35.000 | 50% |
 | `srv-beard` | Beard Trim | Perfilado y definición de barba con navaja caliente y toalla. | $25.000 | 50% |
 | `srv-shave` | Razor Shave | Afeitado clásico con toalla caliente, crema artesanal y navaja. | $30.000 | 50% |
 | `srv-combo` | Full Combo | Corte + Barba + Lavado + Tratamiento capilar completo. | $60.000 | 50% |
@@ -266,6 +271,7 @@ davinchi-control/
 ## 8. Modelos de Base de Datos (SQLAlchemy)
 
 ### 1. Usuarios (`users`)
+
 - `id` (Integer, PK)
 - `nombre` (String)
 - `email` (String, Unique)
@@ -274,6 +280,7 @@ davinchi-control/
 - `activo` (Boolean, default True)
 
 ### 2. Productos & Inventario (`products` & `stock_movements`)
+
 - `products`:
   - `id` (Integer, PK)
   - `codigo` (String, Unique, Index)
@@ -293,6 +300,7 @@ davinchi-control/
   - `usuario_id` (FK a users.id)
 
 ### 3. Servicios & Registros de Cortes (`services` & `service_records`)
+
 - `services`:
   - `id` (Integer, PK)
   - `codigo` (String, Unique)
@@ -311,6 +319,7 @@ davinchi-control/
   - `caja_id` (FK opcional a cash_register.id)
 
 ### 4. Ventas de Artículos (`sales` & `sale_items`)
+
 - `sales`:
   - `id` (Integer, PK)
   - `fecha` (DateTime)
@@ -326,6 +335,7 @@ davinchi-control/
   - `precio_unitario` (Float)
 
 ### 5. Control de Caja (`cash_register`)
+
 - `id` (Integer, PK)
 - `fecha_apertura` (DateTime)
 - `fecha_cierre` (DateTime, Nullable)
@@ -344,29 +354,35 @@ davinchi-control/
 ## 9. Endpoints de la API REST
 
 ### Autenticación
+
 - `POST /api/auth/login` → Devuelve token JWT de acceso.
 - `GET /api/auth/me` → Información del usuario activo y su rol.
 
 ### Inventario
+
 - `GET /api/products` → Lista de artículos con indicador de alerta de stock.
 - `POST /api/products` → Crear nuevo artículo.
 - `PUT /api/products/{id}` → Editar precios o datos del producto.
 - `POST /api/products/{id}/adjust-stock` → Sumar/restar unidades con registro en auditoría.
 
 ### Servicios & Cortes
+
 - `GET /api/services` → Lista de servicios disponibles.
 - `POST /api/services/record` → Registrar servicio completado por un barbero.
 - `GET /api/services/records?fecha_inicio=...&fecha_fin=...` → Historial de servicios.
 
 ### Ventas
+
 - `POST /api/sales` → Registrar venta con descuento automático de inventario.
 
 ### Caja
+
 - `POST /api/cash/open` → Abrir turno de caja con base inicial.
 - `GET /api/cash/current` → Resumen en tiempo real del dinero en caja.
 - `POST /api/cash/close` → Cierre de turno, cálculo de faltante/sobrante.
 
 ### Auditoría & Exportación
+
 - `GET /api/reports/dashboard` → Métricas diarias y mensuales (Total ingresos, cortes, ventas, utilidad).
 - `GET /api/reports/export-excel?fecha_inicio=...&fecha_fin=...` → Descarga archivo `.xlsx` con hojas separadas:
   - Hoja 1: Resumen General de Ingresos y Ganancias
@@ -397,6 +413,7 @@ python-dotenv>=1.0.1
 ## 11. Guía de Puesta en Marcha (Paso a Paso en la Nueva Carpeta)
 
 ### Paso 1: Crear la carpeta del proyecto
+
 ```powershell
 # En la terminal (ejemplo en c:\Users\practicantesap\proyectosPython\):
 mkdir davinchi-control
@@ -404,20 +421,24 @@ cd davinchi-control
 ```
 
 ### Paso 2: Crear y activar el entorno virtual
+
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
 ### Paso 3: Instalar las dependencias
+
 ```powershell
 pip install -r requirements.txt
 ```
 
 ### Paso 4: Ejecutar en modo desarrollo
+
 ```powershell
 uvicorn main:app --reload --port 8000
 ```
+
 - La aplicación estará disponible en `http://localhost:8000`.
 - La documentación interactiva de la API estará en `http://localhost:8000/docs`.
 - La base de datos SQLite se creará y precargará automáticamente con los 23 productos y 6 servicios en el primer arranque.

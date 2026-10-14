@@ -237,6 +237,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .services__video {
-    display: none;
+    /* No ocultamos el elemento para evitar que desaparezca en sistemas con animaciones reducidas */
+    filter: brightness(75%) contrast(100%);
   }
 }

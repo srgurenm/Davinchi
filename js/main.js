@@ -172,14 +172,33 @@ function initGalleryLightbox() {
 ────────────────────────────────────────────── */
 function initServicesVideo() {
   const video = document.querySelector('.services__video');
-  if (video) {
+  if (!video) return;
+
+  // Propiedades requeridas para que los navegadores modernos permitan autoplay
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+
+  const startPlayback = () => {
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
-        // Autoplay silenciado fue prevenido por políticas del navegador
+        // Si el navegador bloqueó el autoplay (modo ahorro de batería o directiva estricta),
+        // arrancamos en la primera interacción (scroll, click, touch)
+        const onFirstInteraction = () => {
+          video.play().catch(() => {});
+          window.removeEventListener('scroll', onFirstInteraction);
+          window.removeEventListener('touchstart', onFirstInteraction);
+          window.removeEventListener('click', onFirstInteraction);
+        };
+        window.addEventListener('scroll', onFirstInteraction, { passive: true });
+        window.addEventListener('touchstart', onFirstInteraction, { passive: true });
+        window.addEventListener('click', onFirstInteraction, { passive: true });
       });
     }
-  }
+  };
+
+  startPlayback();
 }
 
 /* ─────────────────────────────────────────────
