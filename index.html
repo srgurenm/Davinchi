@@ -11,7 +11,7 @@
   <meta name="keywords"
     content="barberia medellin, barber shop medellin, barberia el poblado, best barber shop medellin, corte de cabello medellin, davinchi barber shop, barberia bilingue medellin, fade cut medellin, barberia laureles, arreglar barba medellin" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph  -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://davinchibarbershop.com/" />
   <meta property="og:title" content="Davinchi BarberShop" />
@@ -19,7 +19,7 @@
     content="Estilo clásico con un toque contemporáneo en Medellín. Cortes de cabello élite y diseño de barba. Reserva tu cita." />
   <meta property="og:image" content="https://davinchibarbershop.com/assets/images/interior.png" />
 
-  <!-- Twitter -->
+
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://davinchibarbershop.com/" />
   <meta property="twitter:title" content="Davinchi BarberShop" />
@@ -100,7 +100,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-90Y0P0ZW6Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-90Y0P0ZW6Q');
@@ -134,8 +134,12 @@
         </a>
 
         <!-- Shop STMNT button -->
-        <button class="navbar__shop-btn js-open-store" id="open-store-btn" aria-label="Open STMNT store" data-i18n-aria="nav-shop-aria" aria-haspopup="dialog">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zm0 0h12M16 10a4 4 0 01-8 0"/><path d="M3 6h18"/></svg>
+        <button class="navbar__shop-btn js-open-store" id="open-store-btn" aria-label="Open STMNT store"
+          data-i18n-aria="nav-shop-aria" aria-haspopup="dialog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zm0 0h12M16 10a4 4 0 01-8 0" />
+            <path d="M3 6h18" />
+          </svg>
           <span data-i18n="nav-shop">Shop STMNT</span>
           <span class="navbar__shop-badge" id="nav-shop-badge">0</span>
         </button>
@@ -155,7 +159,8 @@
           <li><a href="#about" class="navbar__link" id="nav-link-about" data-i18n="nav-about">About Us</a></li>
           <li><a href="#contact" class="navbar__link" id="nav-link-contact" data-i18n="nav-contact">Contact</a></li>
           <li class="navbar__item-mobile-shop">
-            <button class="navbar__link navbar__link--shop js-open-store" id="nav-link-shop-mobile" data-i18n="nav-shop">
+            <button class="navbar__link navbar__link--shop js-open-store" id="nav-link-shop-mobile"
+              data-i18n="nav-shop">
               Shop STMNT
             </button>
           </li>
@@ -343,27 +348,23 @@
         <div class="gallery__grid" id="gallery-grid">
 
           <figure class="gallery__item gallery__item--large" id="gallery-item-1">
-            <img src="assets/images/interior.png"
-              alt="Interior of Davinchi BarberShop" class="gallery__img"
+            <img src="assets/images/interior.png" alt="Interior of Davinchi BarberShop" class="gallery__img"
               loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-1">Our Space</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-2">
-            <img src="assets/images/fade-cut.png" alt="Professional fade cut"
-              class="gallery__img" loading="lazy" />
+            <img src="assets/images/fade-cut.png" alt="Professional fade cut" class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-2">Perfect Fade</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-3">
-            <img src="assets/images/beard-shave.png" alt="Straight razor shave"
-              class="gallery__img" loading="lazy" />
+            <img src="assets/images/beard-shave.png" alt="Straight razor shave" class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-3">Classic Shave</figcaption>
           </figure>
 
           <figure class="gallery__item" id="gallery-item-4">
-            <img src="assets/images/tools.png" alt="Premium barber tools"
-              class="gallery__img" loading="lazy" />
+            <img src="assets/images/tools.png" alt="Premium barber tools" class="gallery__img" loading="lazy" />
             <figcaption class="gallery__caption" data-i18n="gallery-caption-4">Elite Tools</figcaption>
           </figure>
         </div>
@@ -447,18 +448,15 @@
     <!-- ═══════════════════════════════════════════════
          STMNT PROMO BANNER
     ═══════════════════════════════════════════════ -->
-    <section class="stmnt-banner" id="stmnt-banner" aria-label="STMNT products available in store" data-i18n-aria="stmnt-banner-aria">
+    <section class="stmnt-banner" id="stmnt-banner" aria-label="STMNT products available in store"
+      data-i18n-aria="stmnt-banner-aria">
       <div class="stmnt-banner__bg" aria-hidden="true"></div>
       <div class="stmnt-banner__container">
 
         <!-- Logo + texto izquierdo -->
         <div class="stmnt-banner__brand" data-animate>
-          <img
-            class="stmnt-banner__logo"
-            src="https://stmntgrooming.com/cdn/shop/files/STMNT-logo.png"
-            alt="STMNT Grooming Goods"
-            onerror="this.src='assets/images/STMNT logo.jpg'; this.style.filter='none';"
-          />
+          <img class="stmnt-banner__logo" src="https://stmntgrooming.com/cdn/shop/files/STMNT-logo.png"
+            alt="STMNT Grooming Goods" onerror="this.src='assets/images/STMNT logo.jpg'; this.style.filter='none';" />
           <div class="stmnt-banner__line" aria-hidden="true"></div>
           <p class="stmnt-banner__tagline">Grooming Goods</p>
         </div>
@@ -476,9 +474,15 @@
 
         <!-- CTA derecho -->
         <div class="stmnt-banner__cta" data-animate data-animate-delay="400">
-          <button class="stmnt-banner__btn js-open-store" id="stmnt-banner-btn" aria-label="Open STMNT store" data-i18n-aria="stmnt-banner-btn-aria" aria-haspopup="dialog">
+          <button class="stmnt-banner__btn js-open-store" id="stmnt-banner-btn" aria-label="Open STMNT store"
+            data-i18n-aria="stmnt-banner-btn-aria" aria-haspopup="dialog">
             <span class="stmnt-banner__btn-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+              </svg>
             </span>
             <span class="stmnt-banner__btn-text">
               <strong data-i18n="stmnt-banner-btn-title">View Store</strong>
@@ -515,19 +519,16 @@
   <!-- ═══════════════════════════════════════════════
        STORE POPUP MODAL
   ═══════════════════════════════════════════════ -->
-  <div class="store-popup" id="store-popup" role="dialog" aria-modal="true" aria-label="STMNT Grooming Goods Store" data-i18n-aria="store-popup-aria">
+  <div class="store-popup" id="store-popup" role="dialog" aria-modal="true" aria-label="STMNT Grooming Goods Store"
+    data-i18n-aria="store-popup-aria">
     <div class="store-popup__overlay" id="store-popup-overlay"></div>
     <div class="store-popup__panel">
 
       <!-- Popup Header -->
       <div class="store-popup__head">
         <div class="store-popup__head-brand">
-          <img
-            class="store-popup__logo"
-            src="https://stmntgrooming.com/cdn/shop/files/STMNT-logo.png"
-            alt="STMNT Grooming Goods"
-            onerror="this.src='assets/images/STMNT logo.jpg'; this.style.filter='none';"
-          />
+          <img class="store-popup__logo" src="https://stmntgrooming.com/cdn/shop/files/STMNT-logo.png"
+            alt="STMNT Grooming Goods" onerror="this.src='assets/images/STMNT logo.jpg'; this.style.filter='none';" />
           <div class="store-popup__head-text">
             <strong>STMNT Grooming Goods</strong>
             <span data-i18n="store-popup-sub">Available at Davinchi BarberShop</span>
@@ -539,7 +540,8 @@
             <i class="fas fa-shopping-bag" aria-hidden="true"></i>
             <span class="store__cart-fab-badge" id="cart-fab-badge" aria-live="polite">0</span>
           </button>
-          <button class="store-popup__close" id="close-store-btn" aria-label="Close store" data-i18n-aria="store-close-aria">
+          <button class="store-popup__close" id="close-store-btn" aria-label="Close store"
+            data-i18n-aria="store-close-aria">
             <i class="fas fa-times" aria-hidden="true"></i>
           </button>
         </div>
@@ -559,9 +561,11 @@
   <!-- ═══════════════════════════════════════════════
        CART FAB BUTTON (outside popup)
   ═══════════════════════════════════════════════ -->
-  <button class="store__cart-fab store__cart-fab--outside" id="cart-fab-outside" aria-label="View shopping cart" data-i18n-aria="cart-outside-aria">
+  <button class="store__cart-fab store__cart-fab--outside" id="cart-fab-outside" aria-label="View shopping cart"
+    data-i18n-aria="cart-outside-aria">
     🛒
-    <span class="store__cart-fab-badge store__cart-fab-badge--outside" id="cart-fab-badge-outside" aria-live="polite">0</span>
+    <span class="store__cart-fab-badge store__cart-fab-badge--outside" id="cart-fab-badge-outside"
+      aria-live="polite">0</span>
   </button>
 
   <!-- ═══════════════════════════════════════════════
@@ -569,7 +573,8 @@
   ═══════════════════════════════════════════════ -->
   <div class="cart-sidebar__overlay" id="cart-overlay" aria-hidden="true"></div>
 
-  <aside class="cart-sidebar" id="cart-sidebar" role="dialog" aria-modal="true" aria-label="Shopping cart" data-i18n-aria="cart-sidebar-aria">
+  <aside class="cart-sidebar" id="cart-sidebar" role="dialog" aria-modal="true" aria-label="Shopping cart"
+    data-i18n-aria="cart-sidebar-aria">
     <div class="cart-sidebar__head">
       <h2 class="cart-sidebar__title">
         <i class="fas fa-shopping-bag" aria-hidden="true"></i>
@@ -599,7 +604,8 @@
           <span class="cart-sidebar__summary-val" id="cart-total">$ 0 COP</span>
         </div>
       </div>
-      <button class="cart-checkout-btn" id="cart-checkout-btn" aria-label="Proceed to checkout via WhatsApp" data-i18n-aria="cart-checkout-aria">
+      <button class="cart-checkout-btn" id="cart-checkout-btn" aria-label="Proceed to checkout via WhatsApp"
+        data-i18n-aria="cart-checkout-aria">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <span data-i18n="cart-btn-checkout">Order via WhatsApp</span>
       </button>
@@ -609,7 +615,8 @@
   <!-- ═══════════════════════════════════════════════
        CHECKOUT MODAL
   ═══════════════════════════════════════════════ -->
-  <div class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+  <div class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true"
+    aria-labelledby="checkout-modal-title">
     <div class="checkout-modal__overlay" id="checkout-overlay"></div>
     <div class="checkout-modal__box">
       <div class="checkout-modal__head">
@@ -620,26 +627,31 @@
       </div>
       <div class="checkout-modal__body">
         <p class="checkout-modal__note" data-i18n="checkout-note">
-          📦 You will be redirected to WhatsApp with your order and details ready. A Davinchi advisor will confirm availability, shipping costs, and delivery time.
+          📦 You will be redirected to WhatsApp with your order and details ready. A Davinchi advisor will confirm
+          availability, shipping costs, and delivery time.
         </p>
         <form class="checkout-form" id="checkout-form" novalidate>
           <div class="form-grid">
             <div class="form-field">
               <label for="field-name" data-i18n="checkout-name-label">Full name *</label>
-              <input type="text" id="field-name" name="name" placeholder="e.g. Carlos Martínez" required autocomplete="name" data-i18n-placeholder="checkout-name-ph" />
+              <input type="text" id="field-name" name="name" placeholder="e.g. Carlos Martínez" required
+                autocomplete="name" data-i18n-placeholder="checkout-name-ph" />
             </div>
             <div class="form-field">
               <label for="field-doc" data-i18n="checkout-doc-label">ID / Document number *</label>
-              <input type="text" id="field-doc" name="doc" placeholder="e.g. 1012345678" required data-i18n-placeholder="checkout-doc-ph" />
+              <input type="text" id="field-doc" name="doc" placeholder="e.g. 1012345678" required
+                data-i18n-placeholder="checkout-doc-ph" />
             </div>
           </div>
           <div class="form-field">
             <label for="field-phone" data-i18n="checkout-phone-label">WhatsApp number *</label>
-            <input type="tel" id="field-phone" name="phone" placeholder="e.g. 3001234567" required autocomplete="tel" data-i18n-placeholder="checkout-phone-ph" />
+            <input type="tel" id="field-phone" name="phone" placeholder="e.g. 3001234567" required autocomplete="tel"
+              data-i18n-placeholder="checkout-phone-ph" />
           </div>
           <div class="form-field">
             <label for="field-address" data-i18n="checkout-address-label">Delivery address *</label>
-            <input type="text" id="field-address" name="address" placeholder="Street, neighborhood, city" required autocomplete="street-address" data-i18n-placeholder="checkout-address-ph" />
+            <input type="text" id="field-address" name="address" placeholder="Street, neighborhood, city" required
+              autocomplete="street-address" data-i18n-placeholder="checkout-address-ph" />
           </div>
           <button type="submit" class="checkout-submit-btn" id="checkout-submit">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -694,7 +706,8 @@
           <li><a href="#gallery" class="footer__link" data-i18n="nav-gallery">Gallery</a></li>
           <li><a href="#about" class="footer__link" data-i18n="nav-about">About Us</a></li>
           <li><a href="#contact" class="footer__link" data-i18n="nav-contact">Contact</a></li>
-          <li><a href="#store" class="footer__link js-open-store" id="footer-shop" data-i18n="footer-shop">Shop STMNT</a></li>
+          <li><a href="#store" class="footer__link js-open-store" id="footer-shop" data-i18n="footer-shop">Shop
+              STMNT</a></li>
         </ul>
       </div>
 
@@ -727,6 +740,24 @@
       </p>
     </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       STORE TRANSITION OVERLAY (Wormhole loader)
+  ═══════════════════════════════════════════════ -->
+  <div class="store-transition" id="store-transition" aria-hidden="true">
+    <div class="hole">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
 
   <!-- JavaScript -->
   <script src="js/animations.js"></script>

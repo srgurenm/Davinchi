@@ -19,19 +19,23 @@ Todas las fuentes son de uso libre, gratuitas y de alta calidad tipográfica dis
 
 | Familia Tipográfica | Pesos Utilizados | Rol de Marca | Enlace Oficial |
 | :--- | :--- | :--- | :--- |
-| **Bebas Neue** | Regular (400) | **Logotipo principal**, números de impacto, estadísticas y titulares principales (H1 / H2). | [Google Fonts — Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue) |
+| **Cinzel** | Regular (400), SemiBold (600), Bold (700) | **Logotipo oficial** (`DAVINCHI`) en barra de navegación y pie de página. Inspiración clásica imperial romana. | [Google Fonts — Cinzel](https://fonts.google.com/specimen/Cinzel) |
+| **Bebas Neue** | Regular (400) | Números de impacto, estadísticas y titulares destacados (H1 / H2). | [Google Fonts — Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue) |
 | **Cormorant Garamond** | Regular (400), Bold (700), Italic (400i) | **Titulares editoriales**, subtítulos poéticos y palabras con énfasis cursivo (*The Art of Style*). | [Google Fonts — Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond) |
 | **Inter** | Light (300), Regular (400), Medium (500), SemiBold (600) | **Cuerpo de texto**, párrafos, subtítulo del logo (`BARBER SHOP`), botones, precios y formularios. | [Google Fonts — Inter](https://fonts.google.com/specimen/Inter) |
 
-### Enlace de Importación Web (HTML):
+### Enlace de Importación Web (HTML)
+
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
 ```
 
-### Reglas CSS de Fuentes:
+### Reglas CSS de Fuentes
+
 ```css
+--font-logo:     'Cinzel', serif;
 --font-headline: 'Bebas Neue', 'Impact', sans-serif;
 --font-display:  'Cormorant Garamond', Georgia, serif;
 --font-sans:     'Inter', system-ui, -apple-system, sans-serif;
@@ -42,6 +46,7 @@ Todas las fuentes son de uso libre, gratuitas y de alta calidad tipográfica dis
 ## 3. Paleta Cromática Oficial
 
 ### A. Acentos Dorados (*Aged Gold*)
+
 Tonos dorados envejecidos con balance cálido para logotipos, botones de acción, bordes destacados y detalles prémium.
 
 | Muestra | Nombre | HEX | RGB | HSL | Uso Principal |
@@ -55,6 +60,7 @@ Tonos dorados envejecidos con balance cálido para logotipos, botones de acción
 ---
 
 ### B. Fondos y Superficies (*Blackberry Charcoal*)
+
 Gama profunda de carbón oscuro con sutil matiz mora/blackberry que aporta elegancia y alto contraste con el dorado y blanco.
 
 | Muestra | Nombre | HEX | RGB | HSL | Uso Principal |
@@ -68,6 +74,7 @@ Gama profunda de carbón oscuro con sutil matiz mora/blackberry que aporta elega
 ---
 
 ### C. Textos, Marfil y Delimitadores
+
 Tonos de texto cuidadosamente balanceados para garantizar lectura sin fatiga visual sobre fondos oscuros.
 
 | Muestra | Nombre | HEX | RGB | HSL | Uso Principal |
@@ -84,11 +91,13 @@ Tonos de texto cuidadosamente balanceados para garantizar lectura sin fatiga vis
 ## 4. Logotipo Oficial y Reglas de Aplicación
 
 El imagotipo oficial consta de tres componentes perfectamente alineados:
+
 1. **Isotipo / Letra D:** En **Aged Gold** (`#B08D57` o degradado oro), con la misma altura y línea base que el texto blanco.
 2. **Nombre de Marca (`AVINCHI`):** En **Bebas Neue**, color Cream (`#F0ECE4`), tracking estándar.
 3. **Descriptor (`BARBER SHOP`):** En **Inter SemiBold 600**, mayúsculas, centrado debajo de `DAVINCHI` con tracking amplio (`0.3em`).
 
-### Archivos Vectoriales y Renders en Alta Definición:
+### Archivos Vectoriales y Renders en Alta Definición
+
 Todos los archivos se encuentran en la carpeta del proyecto `assets/images/`:
 
 - **[davinchi-logo.svg](file:///c:/Users/practicantesap/proyectosPython/DavinchiPag/assets/images/davinchi-logo.svg):** Versión oficial con **fondo transparente** (vectorial puro, escalable sin pérdida de calidad).

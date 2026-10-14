@@ -57,8 +57,9 @@
 
 /* ─── Logo ─── */
 .navbar__logo {
-  font-family: var(--font-headline);
-  font-size: 1.4rem;
+  font-family: var(--font-logo);
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--color-text-primary);
   display: flex;
   align-items: flex-start;
@@ -74,9 +75,11 @@
 }
 
 .navbar__logo-main {
+  font-family: var(--font-logo);
+  font-weight: 700;
   display: inline-flex;
   align-items: baseline;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   line-height: 1;
 }
 

@@ -17,3 +17,6 @@ node_modules/
 
 # Python server (desarrollo local)
 __pycache__/
+
+# Local font downloads
+*.ttf

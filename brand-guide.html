@@ -8,7 +8,7 @@
   <!-- Google Fonts Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -27,6 +27,7 @@
       --color-text-secondary: #9e9589;
       --color-text-muted: #6b6560;
 
+      --font-logo: 'Cinzel', serif;
       --font-headline: 'Bebas Neue', 'Impact', sans-serif;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
@@ -65,9 +66,10 @@
     }
 
     .header-logo-main {
-      font-family: var(--font-headline);
+      font-family: var(--font-logo);
+      font-weight: 700;
       font-size: 2.8rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       line-height: 1;
       color: var(--color-text-primary);
     }
@@ -386,15 +388,29 @@
       <h2>2. Jerarquía Tipográfica</h2>
       <p class="section-desc">Las tres fuentes tipográficas que construyen la personalidad de Davinchi BarberShop.</p>
 
+      <!-- Cinzel -->
+      <div class="type-specimen">
+        <div class="type-header">
+          <div class="type-title">Cinzel (Logotipo Oficial)</div>
+          <div class="type-meta">Google Fonts • Serif Romano • 700 Bold / Mayúsculas</div>
+        </div>
+        <div style="font-family: var(--font-logo); font-size: 2.8rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-text-primary); margin-bottom: 0.5rem;">
+          <span style="color: var(--color-gold);">D</span>AVINCHI BARBERSHOP
+        </div>
+        <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+          Tipografía de inspiración epigráfica romana clásica exclusiva para el logotipo oficial en barra de navegación, pie de página y vectores oficiales de marca.
+        </p>
+      </div>
+
       <!-- Bebas Neue -->
       <div class="type-specimen">
         <div class="type-header">
-          <div class="type-title">Bebas Neue (Titulares & Logotipo)</div>
+          <div class="type-title">Bebas Neue (Titulares de Impacto & Cifras)</div>
           <div class="type-meta">Google Fonts • 400 Regular • Mayúsculas</div>
         </div>
-        <div class="type-sample-bebas">DAVINCHI BARBERSHOP ELITE MEDELLÍN</div>
+        <div class="type-sample-bebas">EXPERIENCIA ÉLITE EN MEDELLÍN</div>
         <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
-          Utilizada para el logotipo principal, títulos H1/H2, números de estadísticas de impacto y títulos de tarjetas de servicio.
+          Utilizada para números de estadísticas de impacto, contadores y títulos secundarios destacados.
         </p>
       </div>
 
@@ -422,26 +438,35 @@
       </div>
     </section>
 
-    <!-- LOGOTIPO VECTORIAL -->
+    <!-- LOGOTIPO VECTORIAL Y PNG -->
     <section id="logotipos">
-      <h2>3. Variantes del Logotipo Vectorial</h2>
-      <p class="section-desc">Archivos vectoriales puros en SVG y renders en 4K Ultra HD disponibles en el proyecto.</p>
+      <h2>3. Variantes del Logotipo Vectorial & PNG 4K</h2>
+      <p class="section-desc">Archivos vectoriales puros en SVG (curvas sin fuentes externas requeridas) y renders en alta resolución PNG 4K.</p>
 
       <div class="logos-grid">
         <div class="logo-item">
           <img src="assets/images/davinchi-logo.svg" alt="Davinchi Logo Transparente" />
           <div class="logo-item-name">Logotipo Oficial (Fondo Transparente)</div>
-          <a href="assets/images/davinchi-logo.svg" download>Descargar SVG Vectorial</a>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+            <a href="assets/images/davinchi-logo.svg" download>Descargar SVG</a>
+            <a href="assets/images/davinchi-logo-4k.png" download>Descargar 4K PNG</a>
+          </div>
         </div>
         <div class="logo-item" style="background: #141315;">
           <img src="assets/images/davinchi-logo-dark.svg" alt="Davinchi Logo Oscuro" />
           <div class="logo-item-name">Logotipo Oficial (Fondo Charcoal #141315)</div>
-          <a href="assets/images/davinchi-logo-dark.svg" download>Descargar SVG Vectorial</a>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+            <a href="assets/images/davinchi-logo-dark.svg" download>Descargar SVG</a>
+            <a href="assets/images/davinchi-logo-dark-4k.png" download>Descargar 4K PNG</a>
+          </div>
         </div>
         <div class="logo-item">
           <img src="assets/images/davinchi-logo-gold.svg" alt="Davinchi Logo Gold" />
           <div class="logo-item-name">Logotipo Edición 100% Oro Metálico</div>
-          <a href="assets/images/davinchi-logo-gold.svg" download>Descargar SVG Vectorial</a>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+            <a href="assets/images/davinchi-logo-gold.svg" download>Descargar SVG</a>
+            <a href="assets/images/davinchi-logo.png" download>Descargar PNG Web</a>
+          </div>
         </div>
       </div>
     </section>
