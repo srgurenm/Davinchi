@@ -168,12 +168,28 @@ function initGalleryLightbox() {
 }
 
 /* ─────────────────────────────────────────────
+   5. VIDEO DE FONDO DE SERVICIOS
+────────────────────────────────────────────── */
+function initServicesVideo() {
+  const video = document.querySelector('.services__video');
+  if (video) {
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay silenciado fue prevenido por políticas del navegador
+      });
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────
    INICIALIZACIÓN — DOMContentLoaded
 ────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   setFooterYear();
   initSmoothScroll();
   initGalleryLightbox();
+  initServicesVideo();
 
   // Registro de mensaje de bienvenida para desarrolladores
   console.log(

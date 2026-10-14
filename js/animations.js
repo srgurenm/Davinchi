@@ -36,15 +36,15 @@ function initScrollReveal() {
    2. CONTADORES ANIMADOS
 ────────────────────────────────────────────── */
 function animateCounter(el, target, duration = 1800) {
-  const start    = performance.now();
+  const start = performance.now();
   const startVal = 0;
 
   function update(currentTime) {
-    const elapsed  = currentTime - start;
+    const elapsed = currentTime - start;
     const progress = Math.min(elapsed / duration, 1);
     // easing cubic-out
-    const eased    = 1 - Math.pow(1 - progress, 3);
-    const current  = Math.round(startVal + (target - startVal) * eased);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(startVal + (target - startVal) * eased);
 
     el.textContent = current >= 1000
       ? current.toLocaleString('es-CO')
@@ -64,7 +64,7 @@ function initCounters() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const el     = entry.target;
+          const el = entry.target;
           const target = parseInt(el.dataset.target, 10);
           animateCounter(el, target);
           observer.unobserve(el);
@@ -89,17 +89,17 @@ function initHeroParticles() {
   if (prefersReduced) return;
 
   const PARTICLE_COUNT = 30;
-  const particles      = [];
+  const particles = [];
 
   function createParticle() {
     const el = document.createElement('span');
     el.classList.add('hero__particle');
 
-    const size   = Math.random() * 3 + 1;          // 1–4px
-    const x      = Math.random() * 100;             // % desde la izquierda
-    const delay  = Math.random() * 8;               // 0–8s de retraso
-    const dur    = Math.random() * 12 + 8;          // 8–20s de duración
-    const blur   = Math.random() < 0.3 ? 1 : 0;    // 30% tienen desenfoque
+    const size = Math.random() * 3 + 1;          // 1–4px
+    const x = Math.random() * 100;             // % desde la izquierda
+    const delay = Math.random() * 8;               // 0–8s de retraso
+    const dur = Math.random() * 12 + 8;          // 8–20s de duración
+    const blur = Math.random() < 0.3 ? 1 : 0;    // 30% tienen desenfoque
 
     el.style.cssText = `
       width:  ${size}px;
@@ -127,13 +127,13 @@ function initHeroParticles() {
 ────────────────────────────────────────────── */
 function applyAnimationAttributes() {
   const animatable = [
-    { selector: '#stat-years',     delay: '0' },
-    { selector: '#stat-clients',   delay: '100' },
-    { selector: '#stat-services',  delay: '200' },
-    { selector: '#stat-rating',    delay: '300' },
-    { selector: '.service-card',   delay: null, all: true },
-    { selector: '.gallery__item',  delay: null, all: true },
-    { selector: '.about__image-col',  delay: '0' },
+    { selector: '#stat-years', delay: '0' },
+    { selector: '#stat-clients', delay: '100' },
+    { selector: '#stat-services', delay: '200' },
+    { selector: '#stat-rating', delay: '300' },
+    { selector: '.service-card', delay: null, all: true },
+    { selector: '.gallery__item', delay: null, all: true },
+    { selector: '.about__image-col', delay: '0' },
     { selector: '.about__content-col', delay: '200' },
     { selector: '.cta-section__content', delay: '0' },
   ];
