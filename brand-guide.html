@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davinchi BarberShop — Guía Visual de Imagen & Marca</title>
+
+  <!-- Google Fonts Oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-gold: #b08d57;
+      --color-gold-light: #b8860b;
+      --color-gold-pale: #d4af37;
+      --color-gold-gradient: linear-gradient(135deg, #e2c172 0%, #b08d57 50%, #8c6e26 100%);
+      --color-black: #141315;
+      --color-dark: #222024;
+      --color-surface: #28262a;
+      --color-surface-card: #2c2a2e;
+      --color-border: rgba(255, 255, 255, 0.08);
+      --color-border-gold: rgba(176, 141, 87, 0.4);
+      --color-cream: #f5f0e8;
+      --color-text-primary: #f0ece4;
+      --color-text-secondary: #9e9589;
+      --color-text-muted: #6b6560;
+
+      --font-headline: 'Bebas Neue', 'Impact', sans-serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--color-black);
+      color: var(--color-text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--color-border-gold);
+      padding-bottom: 2rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+
+    .header-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    .header-logo-main {
+      font-family: var(--font-headline);
+      font-size: 2.8rem;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      color: var(--color-text-primary);
+    }
+
+    .header-logo-d {
+      color: var(--color-gold);
+    }
+
+    .header-logo-sub {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      color: var(--color-gold);
+      margin-top: 0.4rem;
+    }
+
+    .header-badge {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border-gold);
+      background: rgba(176, 141, 87, 0.08);
+      color: var(--color-gold-pale);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    h2 {
+      font-family: var(--font-headline);
+      font-size: 2.2rem;
+      letter-spacing: 0.08em;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.8rem;
+      background: var(--color-gold);
+    }
+
+    .section-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      margin-bottom: 4.5rem;
+    }
+
+    /* Grid Paleta */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .color-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 1rem;
+      cursor: pointer;
+      transition: transform 0.25s, border-color 0.25s;
+      position: relative;
+    }
+
+    .color-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-gold);
+    }
+
+    .color-swatch {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .color-hex {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--color-gold-pale);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .color-role {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      line-height: 1.3;
+    }
+
+    /* Tipografía Preview */
+    .type-specimen {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .type-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .type-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-gold);
+    }
+
+    .type-meta {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-family: monospace;
+    }
+
+    .type-sample-bebas {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .type-sample-garamond {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      line-height: 1.3;
+      color: var(--color-cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .type-sample-inter {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+
+    /* Logos Grid */
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .logo-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-item img {
+      max-width: 100%;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .logo-item-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .logo-item a {
+      font-size: 0.78rem;
+      color: var(--color-gold);
+      text-decoration: none;
+      border: 1px solid var(--color-border-gold);
+      padding: 0.4rem 0.8rem;
+      transition: background 0.2s;
+    }
+
+    .logo-item a:hover {
+      background: rgba(176, 141, 87, 0.15);
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--color-gold);
+      color: #000;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="header-logo">
+        <div class="header-logo-main"><span class="header-logo-d">D</span>AVINCHI</div>
+        <div class="header-logo-sub">BARBER SHOP</div>
+      </div>
+      <div class="header-badge">Manual Oficial de Marca & Guía de Estilo</div>
+    </header>
+
+    <!-- PALETA DE COLORES -->
+    <section id="colores">
+      <h2>1. Paleta Cromática Oficial</h2>
+      <p class="section-desc">Haz clic en cualquier muestra de color para copiar el código HEX directamente a tu portapapeles.</p>
+
+      <h3 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;">Acentos Dorados (Aged Gold)</h3>
+      <div class="color-grid" style="margin-bottom: 2.5rem;">
+        <div class="color-card" onclick="copyHex('#B08D57')">
+          <div class="color-swatch" style="background: #b08d57;"></div>
+          <div class="color-name">Aged Gold (Oficial)</div>
+          <div class="color-hex"><span>#B08D57</span> <span>Copiar</span></div>
+          <div class="color-role">Color principal de la marca, letra D, botones y marcos.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#B8860B')">
+          <div class="color-swatch" style="background: #b8860b;"></div>
+          <div class="color-name">Gold Light</div>
+          <div class="color-hex"><span>#B8860B</span> <span>Copiar</span></div>
+          <div class="color-role">Interacciones hover y acentos dinámicos.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#D4AF37')">
+          <div class="color-swatch" style="background: #d4af37;"></div>
+          <div class="color-name">Gold Pale</div>
+          <div class="color-hex"><span>#D4AF37</span> <span>Copiar</span></div>
+          <div class="color-role">Brillos metálicos, estrellas de calificación.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#E2C172')">
+          <div class="color-swatch" style="background: linear-gradient(135deg, #e2c172, #b08d57, #8c6e26);"></div>
+          <div class="color-name">Degradado Oro</div>
+          <div class="color-hex"><span>#E2C172</span> <span>Copiar</span></div>
+          <div class="color-role">Gradiente metálico premium para botones principales.</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;">Fondos & Superficies (Blackberry & Charcoal)</h3>
+      <div class="color-grid" style="margin-bottom: 2.5rem;">
+        <div class="color-card" onclick="copyHex('#141315')">
+          <div class="color-swatch" style="background: #141315; border: 1px solid #333;"></div>
+          <div class="color-name">Charcoal Pure</div>
+          <div class="color-hex"><span>#141315</span> <span>Copiar</span></div>
+          <div class="color-role">Fondo de sección de servicios y fondo oficial del logo.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#222024')">
+          <div class="color-swatch" style="background: #222024; border: 1px solid #333;"></div>
+          <div class="color-name">Dark Base</div>
+          <div class="color-hex"><span>#222024</span> <span>Copiar</span></div>
+          <div class="color-role">Fondo alternado y pie de página.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#2C2A2E')">
+          <div class="color-swatch" style="background: #2c2a2e; border: 1px solid #444;"></div>
+          <div class="color-name">Surface Card</div>
+          <div class="color-hex"><span>#2C2A2E</span> <span>Copiar</span></div>
+          <div class="color-role">Fondo de tarjetas de producto STMNT y cortes.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#353238')">
+          <div class="color-swatch" style="background: #353238; border: 1px solid #555;"></div>
+          <div class="color-name">Surface Elevated</div>
+          <div class="color-hex"><span>#353238</span> <span>Copiar</span></div>
+          <div class="color-role">Estados hover, inputs de formularios y modales.</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;">Textos & Neutros</h3>
+      <div class="color-grid">
+        <div class="color-card" onclick="copyHex('#F0ECE4')">
+          <div class="color-swatch" style="background: #f0ece4;"></div>
+          <div class="color-name">Cream Primary</div>
+          <div class="color-hex"><span>#F0ECE4</span> <span>Copiar</span></div>
+          <div class="color-role">Texto de marca AVINCHI y titulares de lectura.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#9E9589')">
+          <div class="color-swatch" style="background: #9e9589;"></div>
+          <div class="color-name">Text Secondary</div>
+          <div class="color-hex"><span>#9E9589</span> <span>Copiar</span></div>
+          <div class="color-role">Párrafos descriptivos y detalles informativos.</div>
+        </div>
+        <div class="color-card" onclick="copyHex('#6B6560')">
+          <div class="color-swatch" style="background: #6b6560;"></div>
+          <div class="color-name">Text Muted</div>
+          <div class="color-hex"><span>#6B6560</span> <span>Copiar</span></div>
+          <div class="color-role">Textos legales, créditos y elementos secundarios.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFÍAS -->
+    <section id="tipografias">
+      <h2>2. Jerarquía Tipográfica</h2>
+      <p class="section-desc">Las tres fuentes tipográficas que construyen la personalidad de Davinchi BarberShop.</p>
+
+      <!-- Bebas Neue -->
+      <div class="type-specimen">
+        <div class="type-header">
+          <div class="type-title">Bebas Neue (Titulares & Logotipo)</div>
+          <div class="type-meta">Google Fonts • 400 Regular • Mayúsculas</div>
+        </div>
+        <div class="type-sample-bebas">DAVINCHI BARBERSHOP ELITE MEDELLÍN</div>
+        <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+          Utilizada para el logotipo principal, títulos H1/H2, números de estadísticas de impacto y títulos de tarjetas de servicio.
+        </p>
+      </div>
+
+      <!-- Cormorant Garamond -->
+      <div class="type-specimen">
+        <div class="type-header">
+          <div class="type-title">Cormorant Garamond (Editorial & Énfasis)</div>
+          <div class="type-meta">Google Fonts • Serif • 400 Regular / Italic / 700 Bold</div>
+        </div>
+        <div class="type-sample-garamond">The Art of <em>Style</em> & Precision Grooming</div>
+        <p style="color: var(--color-text-secondary); font-size: 0.9rem;">
+          Utilizada para subtítulos con toque artístico, palabras con acento poético en <em>cursiva</em> y narrativa histórica de la marca.
+        </p>
+      </div>
+
+      <!-- Inter -->
+      <div class="type-specimen">
+        <div class="type-header">
+          <div class="type-title">Inter (Lectura, Interfaz & Subtítulo)</div>
+          <div class="type-meta">Google Fonts • Sans-Serif • 300 / 400 / 500 / 600</div>
+        </div>
+        <div class="type-sample-inter">
+          Cada servicio es ejecutado con rigurosa precisión profesional utilizando productos de alta gama STMNT Grooming Goods. Nuestra experiencia bilingüe garantiza un corte impecable adaptado a la fisonomía de cada cliente.
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOTIPO VECTORIAL -->
+    <section id="logotipos">
+      <h2>3. Variantes del Logotipo Vectorial</h2>
+      <p class="section-desc">Archivos vectoriales puros en SVG y renders en 4K Ultra HD disponibles en el proyecto.</p>
+
+      <div class="logos-grid">
+        <div class="logo-item">
+          <img src="assets/images/davinchi-logo.svg" alt="Davinchi Logo Transparente" />
+          <div class="logo-item-name">Logotipo Oficial (Fondo Transparente)</div>
+          <a href="assets/images/davinchi-logo.svg" download>Descargar SVG Vectorial</a>
+        </div>
+        <div class="logo-item" style="background: #141315;">
+          <img src="assets/images/davinchi-logo-dark.svg" alt="Davinchi Logo Oscuro" />
+          <div class="logo-item-name">Logotipo Oficial (Fondo Charcoal #141315)</div>
+          <a href="assets/images/davinchi-logo-dark.svg" download>Descargar SVG Vectorial</a>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/davinchi-logo-gold.svg" alt="Davinchi Logo Gold" />
+          <div class="logo-item-name">Logotipo Edición 100% Oro Metálico</div>
+          <a href="assets/images/davinchi-logo-gold.svg" download>Descargar SVG Vectorial</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toast">¡Código copiado al portapapeles!</div>
+
+  <script>
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = `¡Copiado ${hex}!`;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
