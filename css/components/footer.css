@@ -25,11 +25,17 @@
 .footer__logo {
   font-family: var(--font-logo);
   font-weight: 700;
-  font-size: 1.6rem;
-  letter-spacing: 0.15em;
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
   color: var(--color-text-primary);
   display: inline-block;
   margin-bottom: var(--space-md);
+}
+
+.footer__logo .logo-v {
+  margin-left: -0.08em;
 }
 
 .footer__tagline {
